@@ -1,0 +1,209 @@
+/* Extracted hero/button/type kit from 8089 site.css for the hybrid sample. Fonts remapped. */
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-var-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(../fonts/plexmono-500-latin.woff2) format("woff2");font-weight:400 600;font-display:swap}
+:root{--sans:"Manrope","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;--max:1200px;--navy:#0B3D70}
+.pcw-hero,.pcw-hero h1,.pcw-hero h2,.pcw-btn,.pcw-lede,.pcw-proof,.pcw-eyebrow{font-family:var(--sans)}
+.pcw-pic-contents,.pcw-pic-contents img{display:block;width:100%;height:100%}
+.screen-reader-text{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* --- site.css 10-11 (container + sr) --- */
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.screen-reader-text{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* --- site.css 51-80 (hero base) --- */
+.pcw-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#F2F6FB 100%);border-bottom:1px solid var(--line)}
+.pcw-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(14,76,138,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(14,76,138,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 70% 40%,#000 30%,transparent 75%);pointer-events:none}
+.pcw-hero__inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+.pcw-eyebrow{font:600 12.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+.pcw-eyebrow span{color:var(--gold-2)}
+.pcw-hero h1{font-size:clamp(2.1rem,1.2rem + 3vw,3.6rem);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin:0 0 20px;max-width:16ch}
+.pcw-lede{font-size:1.12rem;color:var(--ink-2);max-width:54ch;margin-bottom:28px}
+.pcw-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+.pcw-btn,.wp-block-button__link{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff!important;border:2px solid var(--blue);padding:13px 22px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:.18s}
+.pcw-btn:hover,.wp-block-button__link:hover{background:var(--blue-2);border-color:var(--blue-2);transform:translateY(-1px)}
+.pcw-btn--ghost,.is-style-outline .wp-block-button__link{background:transparent;color:var(--ink)!important;border-color:var(--ink)}
+.pcw-btn--ghost:hover,.is-style-outline .wp-block-button__link:hover{background:var(--ink);color:#fff!important;border-color:var(--ink)}
+.pcw-proof{display:flex;flex-wrap:wrap;gap:0;list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pcw-proof li{padding:16px 24px 0 0;margin-right:24px;font-size:13.5px;color:var(--muted);line-height:1.35}
+.pcw-proof li+li{border-left:1px solid var(--line);padding-left:24px}
+.pcw-proof b{display:block;font:700 18px/1.2 var(--sans);color:var(--ink)}
+.pcw-crumbs{font:500 12.5px/1.4 var(--mono);color:var(--muted);margin-bottom:14px}.pcw-crumbs a{color:var(--muted)}
+.pcw-hero__stage{position:relative;perspective:1100px;aspect-ratio:1/1;max-width:540px;width:100%;justify-self:center}
+
+
+.pcw-float{margin:0;position:absolute;inset:6%;transform-style:preserve-3d;will-change:transform;transform:rotateY(var(--ry,-14deg)) rotateX(var(--rx,4deg)) translateY(var(--ty,0px))}
+.pcw-float__img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;animation:pcw-bob 7s ease-in-out infinite;border-radius:24px}
+.pcw-float__shadow{position:absolute;left:22%;right:22%;bottom:4%;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(14,40,80,.28),transparent 70%);filter:blur(4px);animation:pcw-shadow 7s ease-in-out infinite}
+.pcw-corner{position:absolute;width:26px;height:26px;border:2px solid var(--gold-2)}
+.pcw-corner--tl{top:0;left:0;border-right:0;border-bottom:0}.pcw-corner--br{bottom:0;right:0;border-left:0;border-top:0}
+.pcw-hero--still .pcw-hero__inner{padding-top:48px;padding-bottom:48px}
+.pcw-hero--still .pcw-hero__stage{max-width:360px}
+@keyframes pcw-bob{50%{transform:translateY(-14px)}}
+@keyframes pcw-shadow{50%{transform:scaleX(.86);opacity:.7}}
+@keyframes pcw-spin{to{transform:rotate(360deg)}}
+
+/* --- site.css 245-287 (hero typography, circuit, glass, next, marquee) --- */
+.pcw-hero{background:#0B3D70;border-bottom:0;color:#fff;isolation:isolate}
+.pcw-hero__bg{position:absolute;inset:0;z-index:-1;background:
+ radial-gradient(900px 500px at 78% 42%,rgba(198,161,90,.28),transparent 60%),
+ linear-gradient(104deg,var(--navy) 0%,var(--navy-2) 30%,#0E4C8A 56%,#5E8FC4 80%,#DCE8F5 100%)}
+.pcw-hero__bg::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(180deg,transparent,rgba(246,248,251,.0) 40%,rgba(246,248,251,.18))}
+.pcw-hero .pcw-grid-bg{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at 40% 45%,#000 20%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse at 40% 45%,#000 20%,transparent 78%)}
+.pcw-circuit{position:absolute;inset:0;opacity:.22;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220' fill='none' stroke='%23C6A15A' stroke-width='1.2'%3E%3Cpath d='M0 40h70l20 20h60l18-18h70M20 160h50l26-26h52l20 20h90M150 60v40l24 24v96M250 0v30l-20 20v36M70 40v-40M120 220v-30l-16-16'/%3E%3Cg fill='%23C6A15A' stroke='none'%3E%3Ccircle cx='70' cy='40' r='3'/%3E%3Ccircle cx='150' cy='60' r='3'/%3E%3Ccircle cx='168' cy='42' r='3'/%3E%3Ccircle cx='96' cy='134' r='3'/%3E%3Ccircle cx='174' cy='124' r='3'/%3E%3Ccircle cx='230' cy='86' r='3'/%3E%3Ccircle cx='104' cy='174' r='3'/%3E%3C/g%3E%3C/svg%3E") repeat;mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.6) 45%,transparent 75%);-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.6) 45%,transparent 75%)}
+.pcw-hero h1{color:#fff;text-shadow:0 2px 24px rgba(7,29,58,.35)}
+.pcw-hero .pcw-lede{color:#D6E2F0}
+.pcw-hero .pcw-crumbs,.pcw-hero .pcw-crumbs a{color:#B9C8DB}
+.pcw-proof{border-top-color:rgba(255,255,255,.18)}
+.pcw-proof li{color:#B9C8DB}.pcw-proof li+li{border-left-color:rgba(255,255,255,.18)}
+.pcw-proof b{color:#fff;font-family:var(--sans)}
+.pcw-btn--gold{background:linear-gradient(180deg,#D6B574,#C6A15A);border-color:#C6A15A;color:#111!important;box-shadow:0 10px 30px -12px rgba(198,161,90,.8)}
+.pcw-btn--gold:hover{background:#E0C17F;border-color:#E0C17F;color:#111!important}
+.pcw-hero .pcw-btn--ghost{color:#fff!important;border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.06);backdrop-filter:blur(6px)}
+.pcw-hero .pcw-btn--ghost:hover{background:#fff;color:var(--navy)!important;border-color:#fff}
+.pcw-glow{position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle at 50% 55%,var(--glow),rgba(198,161,90,0) 62%);filter:blur(18px);pointer-events:none}
+.pcw-glass{position:absolute;inset:3%;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,rgba(255,255,255,.95),rgba(232,240,248,.86));border:1px solid rgba(255,255,255,.75);box-shadow:0 40px 80px -40px rgba(7,29,58,.85),inset 0 1px 0 #fff;backdrop-filter:blur(14px)}
+.pcw-glass .pcw-corner{z-index:3;margin:14px}
+.pcw-hud{position:absolute;left:18px;bottom:16px;z-index:3;font:500 10.5px/1 var(--mono);letter-spacing:.2em;color:var(--blue);opacity:.75}
+.pcw-float{inset:5%}
+.pcw-float__close{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 40%;opacity:0;mix-blend-mode:multiply;display:none}
+.pcw-hero__next{display:none}
+/* push-in sequence (home, desktop, motion allowed): JS sets --p 0..1 on the hero */
+.pcw-hero.is-pushin{height:220vh}
+.pcw-hero.is-pushin .pcw-hero__sticky{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));min-height:620px;display:flex;flex-direction:column;overflow:hidden}
+.pcw-hero.is-pushin .pcw-hero__inner{flex:1;position:relative}
+.pcw-hero.is-pushin .pcw-hero__copy{opacity:calc(1 - var(--p,0) * 2.6);transform:translateY(calc(var(--p,0) * -60px));will-change:opacity,transform}
+.pcw-hero.is-pushin .pcw-hero__next{display:block;position:absolute;left:24px;top:50%;max-width:30rem;opacity:clamp(0,(var(--p,0) - .38) * 4,1);transform:translate(calc((1 - clamp(0,(var(--p,0) - .38) * 4,1)) * -80px),-50%);color:#D6E2F0;pointer-events:none}
+.pcw-hero__next-title{font:800 clamp(2rem,1.2rem + 2.4vw,3.2rem)/1.08 var(--sans);letter-spacing:-.03em;color:#fff;margin-bottom:14px}
+.pcw-hero.is-pushin .pcw-hero__stage{z-index:1;transform:translateX(calc(var(--p,0) * 4%))}
+.pcw-hero.is-pushin .pcw-float{transform-origin:40% 44%;transform:rotateY(calc(-14deg + var(--p,0) * 14deg)) scale(calc(1 + var(--p,0) * 1.9))}
+.pcw-hero.is-pushin .pcw-float__img{animation:none}
+.pcw-hero.is-pushin .pcw-float__close{display:block;opacity:clamp(0,(var(--p,0) - .5) * 3,1);transform:scale(calc(1.6 - var(--p,0) * .5))}
+.pcw-hero.is-pushin .pcw-float__shadow{opacity:calc(1 - var(--p,0) * 3)}
+.pcw-hero.is-pushin .pcw-marquee{opacity:clamp(0,(var(--p,0) - .15) * 3,1)}
+/* services marquee */
+.pcw-marquee{position:relative;display:flex;overflow:hidden;border-top:1px solid rgba(255,255,255,.14);background:rgba(7,29,58,.55);backdrop-filter:blur(8px);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pcw-marquee__track{display:flex;flex:0 0 auto;list-style:none;margin:0;padding:16px 0;animation:pcw-marq 46s linear infinite}
+.pcw-marquee:hover .pcw-marquee__track{animation-play-state:paused}
+.pcw-marquee li{font:500 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#E6EDF6;white-space:nowrap;padding:0 22px;display:flex;align-items:center}
+.pcw-marquee li::after{content:"";width:6px;height:6px;margin-left:44px;transform:rotate(45deg);background:var(--gold-2)}
+
+/* --- site.css 431-549 (cta v2 + hover v4 + h1-sub) --- */
+/* phone link inside the dark hero lede: readable on navy */
+.pcw-hero .pcw-lede a{color:#E9C77B;text-decoration:underline;text-underline-offset:3px}
+/* ==== Hero CTA v2 (Nov 24 5:04 PM): sweeping stroke + bloom, label morph, looping icons ==== */
+@property --pcw-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes pcw-sweep{to{--pcw-a:360deg}}
+@keyframes pcw-spin{to{transform:rotate(360deg)}}
+@keyframes pcw-arrow-loop{0%{transform:translateX(0);opacity:1}40%{transform:translateX(150%);opacity:0}41%{transform:translateX(-150%);opacity:0}80%,100%{transform:translateX(0);opacity:1}}
+@keyframes pcw-wiggle{0%,100%{transform:rotate(0)}15%{transform:rotate(-12deg)}30%{transform:rotate(12deg)}45%{transform:rotate(-12deg)}60%{transform:rotate(10deg)}75%{transform:rotate(-6deg)}}
+@keyframes pcw-wiggle-idle{0%,10%,100%{transform:rotate(0)}1.5%{transform:rotate(-12deg)}3%{transform:rotate(12deg)}4.5%{transform:rotate(-12deg)}6%{transform:rotate(10deg)}7.5%{transform:rotate(-6deg)}}
+.pcw-hero .pcw-actions{align-items:center;gap:14px 22px}
+.pcw-cta-slot{display:inline-flex;align-items:center}
+/* label morph: two stacked labels, width animates between the measured sizes */
+.pcw-morph{display:inline-grid;grid-template-columns:minmax(0,1fr);overflow:hidden;white-space:nowrap;vertical-align:middle;line-height:1.25}
+.pcw-morph>span{grid-area:1/1;justify-self:start;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+.pcw-morph__b{transform:translateY(110%);opacity:0}
+.pcw-morph.is-measured{width:var(--wa);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.pcw-morph.is-measured>span{justify-self:center}
+a:hover>.pcw-morph.is-measured,a:focus-visible>.pcw-morph.is-measured,a:hover>span>.pcw-morph.is-measured,a:focus-visible>span>.pcw-morph.is-measured{width:var(--wb)}
+a:hover .pcw-morph:not(.pcw-morph--static)>.pcw-morph__a,a:focus-visible .pcw-morph:not(.pcw-morph--static)>.pcw-morph__a{transform:translateY(-110%);opacity:0}
+a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
+/* ---- primary CTA ---- */
+.pcw-btn--pop{position:relative;isolation:isolate;gap:10px;background:transparent!important;border-color:transparent!important;color:#111!important;
+ padding:15px 22px 15px 26px;border-radius:999px;transform:translateY(-1px);
+ box-shadow:0 12px 26px -12px rgba(198,161,90,.8),0 2px 5px -2px rgba(0,0,0,.4);transition:transform .2s ease,box-shadow .2s ease}
+.pcw-btn--pop::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;
+ background:linear-gradient(180deg,#DDBD7C 0%,#C9A45D 55%,#BE984F 100%);
+ box-shadow:inset 0 1px 0 #fff8,inset 0 -3px 6px rgba(92,62,8,.32)}
+/* sweeping stroke: a bright gold/blue comet travelling round a thin gold edge */
+.pcw-btn--pop::before{content:"";position:absolute;inset:-2.5px;z-index:-1;border-radius:inherit;
+ background:conic-gradient(from var(--pcw-a),rgba(198,161,90,.55) 0 58%,#0E4C8A 68%,#6FA8E8 76%,#FFF3D0 84%,#F2D48E 88%,rgba(198,161,90,.55) 96%);
+ opacity:.55;transition:opacity .25s ease}
+.pcw-btn--pop>.pcw-morph,.pcw-btn--pop>.pcw-arrow{position:relative;z-index:1}
+/* soft rotating bloom (blur ~30px, ~30%) */
+.pcw-bloom{position:absolute;inset:-14px -8px;z-index:-3;pointer-events:none;opacity:0;transition:opacity .3s ease;transform:scaleY(.42)}
+.pcw-bloom>span{position:absolute;left:50%;top:50%;width:110%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+ background:conic-gradient(#F2D48E,#0E4C8A,#C6A15A,#3E7FC9,#F2D48E);filter:blur(30px)}
+.pcw-btn--pop:hover,.pcw-btn--pop:focus-visible{transform:translateY(-3px);box-shadow:0 18px 30px -12px rgba(198,161,90,.85),0 4px 8px -4px rgba(0,0,0,.45)}
+.pcw-btn--pop:hover::before,.pcw-btn--pop:focus-visible::before{opacity:1}
+.pcw-btn--pop:hover .pcw-bloom,.pcw-btn--pop:focus-visible .pcw-bloom{opacity:.32}
+.pcw-btn--pop:focus-visible{outline:3px solid #fff;outline-offset:5px}
+.pcw-prop .pcw-btn--pop::before{animation:pcw-sweep 3.2s linear infinite}
+.pcw-btn--pop:hover .pcw-bloom>span,.pcw-btn--pop:focus-visible .pcw-bloom>span{animation:pcw-spin 6s linear infinite}
+.pcw-arrow{display:inline-flex;overflow:hidden;width:18px;height:18px}
+.pcw-arrow svg{display:block}
+.pcw-btn--pop:hover .pcw-arrow svg,.pcw-btn--pop:focus-visible .pcw-arrow svg{animation:pcw-arrow-loop 1.3s cubic-bezier(.5,0,.3,1) infinite}
+/* ---- call buttons (hero + header): ringing receiver, quieter sweep ---- */
+.pcw-ring{display:inline-flex;transform-origin:50% 60%}
+.pcw-ring .pcw-ico{display:block}
+.pcw-callfx:hover .pcw-ring,.pcw-callfx:focus-visible .pcw-ring{animation:pcw-wiggle .6s ease-in-out infinite}
+.pcw-hero a.pcw-call{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:10px;color:#fff!important;font-weight:700;font-size:16px;text-decoration:none;
+ padding:13px 20px;border-radius:999px;background:rgba(255,255,255,.06)}
+.pcw-hero a.pcw-call::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.5px;
+ background:conic-gradient(from var(--pcw-a),rgba(255,255,255,.35) 0 62%,#6FA8E8 74%,#F2D48E 84%,rgba(255,255,255,.35) 94%);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.pcw-prop .pcw-hero a.pcw-call:hover::before,.pcw-prop .pcw-hero a.pcw-call:focus-visible::before{animation:pcw-sweep 4s linear infinite}
+.pcw-hero a.pcw-call:hover,.pcw-hero a.pcw-call:focus-visible{background:rgba(255,255,255,.12)}
+.pcw-hero a.pcw-call .pcw-ico{color:#E9C77B}
+.pcw-hero a.pcw-call:focus-visible{outline:3px solid #E9C77B;outline-offset:3px}
+.pcw-hero .pcw-lede a{color:#E9C77B!important}
+.pcw-hero a.pcw-link-arrow{color:#fff!important;font-weight:700;text-decoration:none;text-underline-offset:4px;display:inline-flex;gap:6px;align-items:center;padding:6px 0}
+.pcw-hero a.pcw-link-arrow:hover,.pcw-hero a.pcw-link-arrow:focus-visible{text-decoration:underline}
+/* header phone: same ring + morph, quiet sweep on hover */
+.header-phone.pcw-callfx{position:relative;isolation:isolate}
+.header-phone.pcw-callfx::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.5px;opacity:0;transition:opacity .25s ease;
+ background:conic-gradient(from var(--pcw-a),transparent 0 60%,#6FA8E8 74%,#F2D48E 86%,transparent 96%);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.header-phone.pcw-callfx:hover::before,.header-phone.pcw-callfx:focus-visible::before{opacity:1}
+.pcw-prop .header-phone.pcw-callfx:hover::before,.pcw-prop .header-phone.pcw-callfx:focus-visible::before{animation:pcw-sweep 4s linear infinite}
+.header-phone .pcw-morph{line-height:1.15}
+.header-phone .pcw-morph.is-measured>span{justify-self:end}
+/* phones: full-width 56px buttons; no hover, so the receiver rings once every ~6s */
+@media (max-width:699px){
+ .pcw-hero .pcw-actions>.pcw-cta-slot{flex:1 1 100%;min-width:0!important}
+ .pcw-hero .pcw-actions>.pcw-cta-slot>a{width:100%;justify-content:center}
+ .pcw-hero a.pcw-call{min-height:56px;font-size:17px;border-radius:14px;background:rgba(255,255,255,.08)}
+ .pcw-hero a.pcw-call::before{padding:2px;background:rgba(255,255,255,.75)}
+ .pcw-btn--pop{border-radius:14px;min-height:56px}
+ .pcw-hero a.pcw-call .pcw-morph.is-measured{width:auto}
+ html.pcw-chat-tuck .pcw-chat-launch{opacity:0;visibility:hidden;transform:translateY(16px)}
+ .pcw-chat-launch{transition:opacity .2s ease,transform .2s ease,visibility .2s}
+}
+@media (hover:none){
+ .pcw-hero a.pcw-call .pcw-ring{animation:pcw-wiggle-idle 6s ease-in-out infinite 2s}
+ a:hover .pcw-morph:not(.pcw-morph--static)>.pcw-morph__a{transform:none;opacity:1}
+ a:hover .pcw-morph__b{transform:translateY(110%);opacity:0}
+ a:hover>.pcw-morph.is-measured,a:hover>span>.pcw-morph.is-measured{width:var(--wa)}
+}
+@media (prefers-reduced-motion:reduce){
+ .pcw-btn--pop,.pcw-btn--pop:hover,.pcw-btn--pop:focus-visible{transform:none;transition:none}
+ .pcw-btn--pop::before,.pcw-hero a.pcw-call::before,.header-phone.pcw-callfx::before,.pcw-bloom>span,.pcw-arrow svg,.pcw-ring{animation:none!important}
+ .pcw-morph,.pcw-morph>span,.pcw-bloom,.pcw-chat-launch{transition:none!important}
+}
+/* keep pill shapes when focused (global :focus-visible sets radius 4px) */
+.pcw-btn--pop:focus-visible,.pcw-hero a.pcw-call:focus-visible{border-radius:999px}
+.header-phone.pcw-callfx:focus-visible{border-radius:10px}
+@media (max-width:699px){.pcw-btn--pop:focus-visible,.pcw-hero a.pcw-call:focus-visible{border-radius:14px}}
+@media(max-width:767px){.header-phone>span.pcw-ring{display:inline-flex!important}}
+
+/* Home lede emphasis (Danny, Nov 24): first sentence only. */
+.pcw-hero .pcw-lede strong{font-weight:700;color:#fff}
+.pcw-hero .pcw-lede{text-wrap:pretty}
+
+/* Split home H1 (Nov 24 8:40 PM): location line about 46% size, lighter, gold */
+.pcw-hero h1 .pcw-h1-sub{display:block;font-size:.46em;font-weight:500;line-height:1.2;letter-spacing:-.005em;margin-top:.32em;color:#E2BC6A}
+@media (max-width:767px){.pcw-hero h1 .pcw-h1-sub{font-size:.5em}}
+/* ===== Hover v4 (Danny, Nov 24 8:50 PM): CSS only, transform/opacity/background-position only, so no layout change.
+   Book now: lift + soft gold shadow + one gold shimmer sweep. Call: lift + soft blue shadow + one short phone ring. Same on :focus-visible. ===== */
+@keyframes pcw-shimmer{from{background-position:-160% 0,0 0}to{background-position:260% 0,0 0}}
+@keyframes pcw-ring-once{0%,100%{transform:rotate(0)}12%{transform:rotate(-16deg)}24%{transform:rotate(14deg)}36%{transform:rotate(-12deg)}48%{transform:rotate(9deg)}60%{transform:rotate(-5deg)}72%{transform:rotate(2deg)}}
+.pcw-btn--pop::after{background:linear-gradient(105deg,transparent 30%,rgba(255,246,220,.7) 47%,rgba(255,255,255,.85) 50%,rgba(255,246,220,.7) 53%,transparent 70%) no-repeat,linear-gradient(180deg,#DDBD7C 0%,#C9A45D 55%,#BE984F 100%);background-size:60% 100%,100% 100%;background-position:-160% 0,0 0}
+.pcw-btn--pop:hover::after,.pcw-btn--pop:focus-visible::after{animation:pcw-shimmer .9s cubic-bezier(.4,0,.2,1) 1 both}
+.pcw-btn--pop:hover,.pcw-btn--pop:focus-visible{box-shadow:0 18px 32px -12px rgba(198,161,90,.8),0 6px 14px -8px rgba(14,76,138,.55)}
+.pcw-hero a.pcw-call{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.pcw-hero a.pcw-call:hover,.pcw-hero a.pcw-call:focus-visible{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(47,123,255,.75),0 4px 10px -6px rgba(0,0,0,.5)}
+.pcw-hero a.pcw-call:hover .pcw-ring,.pcw-hero a.pcw-call:focus-visible .pcw-ring{animation:pcw-ring-once .8s ease-in-out 1}
+@media (prefers-reduced-motion:reduce){
+ .pcw-btn--pop:hover::after,.pcw-btn--pop:focus-visible::after,.pcw-hero a.pcw-call:hover .pcw-ring,.pcw-hero a.pcw-call:focus-visible .pcw-ring{animation:none!important}
+ .pcw-hero a.pcw-call,.pcw-hero a.pcw-call:hover,.pcw-hero a.pcw-call:focus-visible{transform:none;transition:background .2s ease}
+ .pcw-btn--pop:hover::after,.pcw-btn--pop:focus-visible::after{background-image:none,linear-gradient(180deg,#E6C887 0%,#D2AE66 55%,#C7A158 100%)}
