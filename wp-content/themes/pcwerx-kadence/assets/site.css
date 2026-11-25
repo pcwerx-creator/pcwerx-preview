@@ -608,3 +608,20 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 .pcw-gr__item{border:1px solid rgba(198,161,90,.35);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.04)}
 .pcw-gr__meta{margin:0 0 8px;font-size:14px}.pcw-gr__text{margin:0;font-size:15px;line-height:1.55}
 .pcw-gr__src{margin:14px 0 0;font-size:12px;opacity:.75}
+
+/* ---- About CTA band (Nov 25 12:27 PM): call 905-5PC-WERX, Get IT help, review button 3. Call button = the hero call button's look. */
+.pcw-band{margin:40px 0 8px;border-radius:20px;padding:28px 30px;background:linear-gradient(135deg,rgba(14,76,138,.55),rgba(10,22,44,.9));box-shadow:inset 0 0 0 1px rgba(198,161,90,.45),0 20px 46px -24px rgba(47,123,255,.6)}
+.pcw-band__inner{display:flex;align-items:center;justify-content:space-between;gap:22px 30px;flex-wrap:wrap}
+.pcw-band__copy h2{margin:0 0 6px;color:#fff}.pcw-band__copy p{margin:0;color:rgba(255,255,255,.82)}
+.pcw-band__actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.pcw-band__actions .pcw-review-btn{margin:0}
+.pcw-band a.pcw-call{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:10px;color:#fff!important;font-weight:700;font-size:16px;text-decoration:none;padding:13px 20px;border-radius:999px;background:rgba(255,255,255,.06)}
+.pcw-band a.pcw-call::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--pcw-a),rgba(255,255,255,.35) 0 62%,#6FA8E8 74%,#F2D48E 84%,rgba(255,255,255,.35) 94%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.pcw-prop .pcw-band a.pcw-call:hover::before,.pcw-prop .pcw-band a.pcw-call:focus-visible::before{animation:pcw-sweep 4s linear infinite}
+.pcw-band a.pcw-call:hover,.pcw-band a.pcw-call:focus-visible{background:rgba(255,255,255,.12)}
+.pcw-band a.pcw-call .pcw-ico{color:#E9C77B}.pcw-band a.pcw-call:focus-visible{outline:3px solid #E9C77B;outline-offset:3px}
+@media(max-width:767px){.pcw-band{padding:22px 18px}.pcw-band__actions{width:100%;flex-direction:column;align-items:stretch}.pcw-band__actions>*{width:100%}.pcw-band__actions a{justify-content:center}.pcw-band__actions .pcw-review-btn{display:flex;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.pcw-band a.pcw-call::before{animation:none!important}}
+/* About: "Why people choose us" four short points */
+.pcw-why{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.pcw-why li{position:relative;padding:14px 16px 14px 44px;border-radius:14px;border:1px solid rgba(90,162,255,.28);background:rgba(255,255,255,.035);font-weight:600}
+.pcw-why li::before{content:"";position:absolute;left:16px;top:50%;width:16px;height:9px;border:solid #E9C77B;border-width:0 0 2.5px 2.5px;transform:translateY(-70%) rotate(-45deg)}
