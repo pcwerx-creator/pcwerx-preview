@@ -35,13 +35,13 @@
        Each label point is mapped through the same zoom transform here and moved with a whole-pixel translate3d, so the text always renders at 1x. */
     if(cos&&st){ cos.classList.add('is-free'); st.appendChild(cos);
       cps=Array.prototype.map.call(cos.querySelectorAll('.pcw-callout'),function(e){ return {e:e,x:parseFloat(e.style.left)/100,y:parseFloat(e.style.top)/100}; }); }
-    var g={}, tgt=0, cur=-1, raf=0, last=0, zoomed=false, mob=false, phase='zoom';
+    var g={}, tgt=0, cur=-1, raf=0, last=0, zoomed=false, mob=false, sm=false, phase='zoom';
     /* fractions of the pin: zoom, short hold, shrink-into-chip, network hold */
     var Z1=0.42, H0=0.50, H1=0.72;
     function cl(v){return v<0?0:v>1?1:v;}
     function ease(v){return v*v*(3-2*v);}
     function measure(){
-      mob=w.matchMedia('(max-width: 899px)').matches;
+      mob=w.matchMedia('(max-width: 899px)').matches; sm=w.matchMedia('(max-width: 767px)').matches;
       /* mobile pin is 520px+80vh (was 520px+110vh, Danny t210u): rescale so the zoom and handoff keep their px length and only the network hold gets shorter */
       var vh=w.innerHeight||844, f=mob?Math.min(1.5,(520+1.1*vh)/(520+.8*vh)):1; Z1=0.42*f; H0=0.50*f; H1=Math.min(.95,0.72*f);
       var keep=fl.style.transform; fl.style.transform='none'; if(orb)orb.style.transform='';
@@ -97,7 +97,7 @@
       if(p!==phase){phase=p; hero.classList.toggle('is-handoff',p==='handoff'); hero.classList.toggle('is-network',p==='network');}
     }
     function loop(now){
-      var dt=last?Math.min(64,now-last):16.7; last=now; var k=1-Math.pow(1-.1,dt/16.7);
+      var dt=last?Math.min(sm?34:64,now-last):16.7; last=now; var k=1-Math.pow(1-(sm?.14:.1),dt/16.7); /* phones (t234u): eases a bit faster so the half-length pin keeps up without stutter */
       cur=cur<0?tgt:cur+(tgt-cur)*k;
       if(Math.abs(tgt-cur)<.0004){cur=tgt; apply(cur); raf=0; last=0; fl.style.willChange='auto'; return;}
       apply(cur); raf=requestAnimationFrame(loop); }

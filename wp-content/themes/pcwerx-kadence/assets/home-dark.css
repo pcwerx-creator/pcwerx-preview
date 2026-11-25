@@ -61,9 +61,6 @@ body.pcw-home-dark{
 .pcw-home-dark .pcw-proof{border-color:var(--hline)}
 .pcw-home-dark .pcw-proof li{color:#AEBACA;border-color:var(--hline)}
 .pcw-home-dark .pcw-proof b{color:#fff}
-.pcw-home-dark .pcw-marquee{--mq-bg:#07090c;background:var(--mq-bg);border-top:1px solid var(--hline);border-bottom:1px solid var(--hline)}
-.pcw-home-dark .pcw-marquee li{color:#DCE5F0}
-.pcw-home-dark .pcw-marquee li::after{background:var(--hb)}
 
 /* ---- hero buttons on black: gold primary keeps its gold/blue sweep; call = blue-glass with blue sweep */
 .pcw-home-dark .pcw-btn--pop{box-shadow:inset 0 1px 0 #fff8,0 10px 30px -10px rgba(198,161,90,.55)}
@@ -234,7 +231,6 @@ body.pcw-home-dark{
 .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__next{display:flex;flex-direction:column;justify-content:center;position:sticky;top:var(--hdr,78px);z-index:2;height:var(--vh);min-height:540px;max-width:30rem;left:auto;margin:0;opacity:0;transform:none;pointer-events:none;align-self:start;color:#D6E2F0}
 .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__next .pcw-eyebrow{margin-bottom:14px}
 .pcw-home-dark .pcw-hero.is-zoom.is-zoomed .pcw-hero__copy{pointer-events:none}
-.pcw-home-dark .pcw-hero.is-zoom .pcw-marquee{opacity:1;position:relative;z-index:3}
 @media (min-width:900px){
  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner::before{top:0;bottom:0;background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.72) 50%,rgba(5,6,7,0) 100%)}
 }

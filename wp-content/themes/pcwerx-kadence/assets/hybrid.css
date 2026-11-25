@@ -116,3 +116,10 @@ body.pcw-home-dark{
   .net-fallback::after{background:linear-gradient(180deg,#090b0e00 0,#090b0e00 30vh,#090b0e 42vh)}
   .net-fallback .container{justify-content:flex-start;padding-top:0;padding-bottom:28px;margin-top:-6px}
 }
+
+/* Danny t234u (Nov 25 2026 2:25 PM): phones under 768px. The PC zoom -> network scroll story is about half as long
+   (pin range 520px + 80vh -> 260px + 40vh, i.e. 1195px -> 598px on a 390x844 phone). hybrid-hero.js keeps every stage's share of the pin,
+   so the copy, zoom + callouts, "Expert repair" panel, handoff and network all still show, each in half the scroll. Tablets/desktop unchanged. */
+@media (max-width:767px){
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 260px + 40vh)}
+}

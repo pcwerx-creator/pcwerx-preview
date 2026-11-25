@@ -218,7 +218,7 @@ main#main{display:block}
 
 /* =====================================================================
    v2 "premium tech" layer (Danny, 1:39): navy→light hero, circuit grid, gold glow,
-   glass cards, Manrope + IBM Plex Mono (self-hosted, OFL), line icons, marquee,
+   glass cards, Manrope + IBM Plex Mono (self-hosted, OFL), line icons,
    alternating bands, safe reveals. Overrides v1 rules above.
    ===================================================================== */
 @font-face{font-family:"Manrope";src:url(fonts/manrope-var-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
@@ -277,22 +277,6 @@ h3{font-weight:750}
 .pcw-hero.is-pushin .pcw-float__img{animation:none}
 .pcw-hero.is-pushin .pcw-float__close{display:block;opacity:clamp(0,(var(--p,0) - .5) * 3,1);transform:scale(calc(1.6 - var(--p,0) * .5))}
 .pcw-hero.is-pushin .pcw-float__shadow{opacity:calc(1 - var(--p,0) * 3)}
-.pcw-hero.is-pushin .pcw-marquee{opacity:clamp(0,(var(--p,0) - .15) * 3,1)}
-/* services marquee */
-/* Nov 25 2026 (Danny t131u, "looks scrambled on iPhone"): no backdrop-filter / mask-image on the strip (iOS Safari re-composites a masked,
-   backdrop-blurred layer every frame over the moving hero and smears the moving text). Edge fades are static overlays instead; the text sits on one
-   composited rail (translate3d, backface hidden) that moves exactly half its width; ~2.7x slower on desktop, slower again on phones. */
-.pcw-marquee{--mq-bg:#0a2142;position:relative;z-index:3;display:block;overflow:hidden;contain:paint;border-top:1px solid rgba(255,255,255,.14);background:var(--mq-bg)}
-.pcw-marquee::before,.pcw-marquee::after{content:"";position:absolute;top:0;bottom:0;width:8%;z-index:2;pointer-events:none}
-.pcw-marquee::before{left:0;background:linear-gradient(90deg,var(--mq-bg),transparent)}
-.pcw-marquee::after{right:0;background:linear-gradient(270deg,var(--mq-bg),transparent)}
-.pcw-marquee__rail{display:flex;width:max-content;transform:translate3d(0,0,0);backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;animation:pcw-marq 125s linear infinite}
-.pcw-marquee__track{display:flex;flex:0 0 auto;list-style:none;margin:0;padding:16px 0}
-.pcw-marquee:hover .pcw-marquee__rail{animation-play-state:paused}
-.pcw-marquee li{font:500 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#E6EDF6;white-space:nowrap;padding:0 22px;display:flex;align-items:center;-webkit-font-smoothing:antialiased}
-.pcw-marquee li::after{content:"";width:6px;height:6px;margin-left:44px;transform:rotate(45deg);background:var(--gold-2)}
-@keyframes pcw-marq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-@media (max-width:768px){.pcw-marquee__rail{animation-duration:110s}.pcw-marquee li{letter-spacing:.1em}}
 /* trust strip */
 .pcw-trust{position:relative;z-index:2;margin:-34px 0 0}
 .pcw-trust ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0!important;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border:1px solid var(--glass-line);border-radius:18px;box-shadow:0 24px 50px -30px rgba(7,29,58,.55);overflow:hidden;max-width:calc(var(--max) - 48px)}
@@ -367,13 +351,9 @@ h3{font-weight:750}
  .pcw-svc-grid{grid-template-columns:1fr}
  .pcw-trust{margin-top:-22px}.pcw-trust ul{grid-template-columns:1fr 1fr}.pcw-trust li{padding:14px}.pcw-trust li:nth-child(odd){border-left:0}.pcw-trust li:nth-child(4){border-left:1px solid var(--line)}.pcw-trust li:nth-child(n+3){border-top:1px solid var(--line)}.pcw-trust li:first-child{grid-column:1/-1}.pcw-trust li:nth-child(2){border-top:1px solid var(--line)}
  .pcw-band{padding:56px 0 44px}
- .pcw-marquee li{font-size:11.5px;padding:0 14px}.pcw-marquee li::after{margin-left:28px}
  .footer-logo img{width:170px}
 }
 @media (prefers-reduced-motion:reduce){
- .pcw-marquee__rail{animation:none!important;transform:none;will-change:auto;width:auto}
- .pcw-marquee__track{flex-wrap:wrap;justify-content:center;flex:1 1 auto}
- .pcw-marquee__track[aria-hidden]{display:none}
  .pcw-js .pcw-rv-on{opacity:1;transform:none}
 }
 /* Pixel v2 transparent cut-outs + sticky fix (overflow:hidden on the hero broke position:sticky) */
@@ -384,9 +364,8 @@ h3{font-weight:750}
 .pcw-sec .wp-block-image img[src*="/pix-"]{mix-blend-mode:normal;border-radius:0}
 .utility .container{white-space:nowrap;gap:18px}
 @media (max-width:1360px){.u-since{font-size:0}.u-since::before{content:"Local expertise since 2006";font-size:12.5px}.u-since i{display:none}}
-/* the push-in hero ends with the marquee strip, so the trust bar sits below it instead of overlapping */
+/* trust bar sits just below the push-in hero (services marquee removed Nov 25 2026) */
 .pcw-hero--pushin~.pcw-trust,.pcw-hero--pushin+*>.pcw-trust{margin-top:28px}
-@media (prefers-reduced-motion:reduce){.pcw-marquee__track{flex-wrap:nowrap;justify-content:flex-start}}
 .pcw-footer .pcw-eyebrow{letter-spacing:.08em;font-size:11px}
 @media (max-width:767px){.u-since::before{content:"Since 2006"}}
 .pcw-cta__hours{font:500 13px/1.4 var(--mono);color:var(--muted);margin:4px 0 10px}
