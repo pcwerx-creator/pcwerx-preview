@@ -411,14 +411,18 @@ h3{font-weight:750}
 .pcw-dia-sec{margin:3rem auto;max-width:1200px}
 .pcw-dia-sec>h2{margin-bottom:.5rem}
 .pcw-diagram,.pcw-pic{margin:1.5rem auto 2rem;max-width:1200px}
-.pcw-diagram__frame{position:relative;container-type:inline-size;border-radius:18px;overflow:hidden;background:#EEF0EC;box-shadow:0 18px 40px -24px rgba(14,30,60,.35)}
+.pcw-diagram__frame{position:relative;container-type:inline-size;border-radius:18px;overflow:hidden;background:#0b0f1a;border:1px solid rgba(90,162,255,.22);box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
 .pcw-diagram img,.pcw-pic img{display:block;width:100%;height:auto}
 .pcw-pic picture{display:block;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(14,30,60,.35)}
 .pcw-diagram figcaption,.pcw-pic figcaption{margin-top:.6rem;font-size:.9rem;color:#4a5260}
+.pcw-dark .pcw-diagram figcaption,.pcw-dark .pcw-pic figcaption{color:#A9B6C8}
 .pcw-diagram__labels{list-style:none;margin:0;padding:0;position:absolute;inset:0;pointer-events:none}
 .pcw-pill{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);white-space:nowrap;margin:0;
- font:600 clamp(9px,1.25cqw,16px)/1 "Manrope",system-ui,sans-serif;padding:.45em .85em;border-radius:999px;background:#E2E6EA;color:#1E2228;box-shadow:0 1px 2px rgba(0,0,0,.08)}
-.pcw-pill--blue{background:#0E4C8A;color:#fff}
+ font:600 clamp(9px,1.25cqw,16px)/1 "Manrope",system-ui,sans-serif;padding:.45em .85em .45em 1.45em;border-radius:999px;background:rgba(11,15,26,.82);color:#fff;border:1px solid rgba(90,162,255,.6);
+ box-shadow:0 0 0 1px rgba(0,0,0,.35),0 4px 14px -6px rgba(90,162,255,.45),inset 0 1px 0 rgba(255,255,255,.08)}
+/* dark glass pill (dark diagrams, Nov 24 11:10 PM): white text, blue border, gold dot accent */
+.pcw-pill::before{content:"";position:absolute;left:.6em;top:50%;width:.42em;height:.42em;margin-top:-.21em;border-radius:50%;background:#E2BC6A;box-shadow:0 0 6px rgba(226,188,106,.8)}
+.pcw-pill--blue{background:rgba(14,76,138,.92);border-color:#E2BC6A;color:#fff}
 @media (max-width:699px){
  .pcw-diagram__labels{clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
  .pcw-dia-sec{margin:2rem auto}
