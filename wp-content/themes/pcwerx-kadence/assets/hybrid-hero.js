@@ -30,7 +30,11 @@
   if(Z){ (function(){
     var fl=Z, inner=hero.querySelector('.pcw-hero__inner'), st=hero.querySelector('.pcw-hero__stage'), copy=hero.querySelector('.pcw-hero__copy'),
         nx=hero.querySelector('.pcw-hero__next'), net=hero.querySelector('.pcw-hero__net'), crop=hero.querySelector('.pcw-zoomcrop'), orb=hero.querySelector('.pcw-orbit'),
-        layer=hero.querySelector('.hybrid-net');
+        layer=hero.querySelector('.hybrid-net'), cos=hero.querySelector('.pcw-callouts'), cps=[];
+    /* callouts live outside the scaled figure (Nov 25, Danny t133u): inside it they were rasterised at 1x and stretched, so they blurred at full zoom.
+       Each label point is mapped through the same zoom transform here and moved with a whole-pixel translate3d, so the text always renders at 1x. */
+    if(cos&&st){ cos.classList.add('is-free'); st.appendChild(cos);
+      cps=Array.prototype.map.call(cos.querySelectorAll('.pcw-callout'),function(e){ return {e:e,x:parseFloat(e.style.left)/100,y:parseFloat(e.style.top)/100}; }); }
     var g={}, tgt=0, cur=-1, raf=0, last=0, zoomed=false, mob=false, phase='zoom';
     /* fractions of the pin: zoom, short hold, shrink-into-chip, network hold */
     var Z1=0.42, H0=0.50, H1=0.72;
@@ -44,7 +48,7 @@
       g.pinStart=ir.top+w.scrollY-hdr; g.range=Math.max(1,ir.height-sr.height);
       g.S=mob?1.6:Math.min(2.3,Math.max(1.5,.82*sr.height/(.44*fr.height)));
       g.dx=(mob?.36:.62)*sr.width-px; g.dy=(mob?.33:.5)*sr.height-py;
-      g.zEnd=mob?.62:.78; fl.style.transform=keep; }
+      g.zEnd=mob?.62:.78; g.fx=fr.left-sr.left; g.fy=fr.top-sr.top; g.fw=fr.width; g.fh=fr.height; g.ox=g.fx+.44*fr.width; g.oy=g.fy+.49*fr.height; fl.style.transform=keep; }
     function zoomE(t){ return ease(cl(t/Z1)); }
     function handE(t){ return ease(cl((t-H0)/(H1-H0))); }
     function apply(t){
@@ -60,6 +64,9 @@
       fl.style.transform='translate3d('+sx.toFixed(2)+'px,'+sy.toFixed(2)+'px,0) perspective(1600px) rotateY('+ry.toFixed(3)+'deg) scale('+s.toFixed(4)+')';
       fl.style.setProperty('--is',(1/s).toFixed(4));
       fl.style.setProperty('--co',(cl((e-.66)/.34)*(1-h)).toFixed(3));
+      if(cps.length){ cos.style.setProperty('--co',(cl((e-.66)/.34)*(1-h)).toFixed(3));
+        for(var ci=0;ci<cps.length;ci++){ var c=cps[ci], X=g.ox+sx+(g.fx+c.x*g.fw-g.ox)*s, Y=g.oy+sy+(g.fy+c.y*g.fh-g.oy)*s;
+          c.e.style.transform='translate3d('+Math.round(X)+'px,'+Math.round(Y)+'px,0)'; } }
       fl.style.opacity=(1-cl((h-.08)/.7)).toFixed(3);
       if(crop)crop.style.opacity=(cl((e-.1)/.3)*(1-h)).toFixed(3);
       if(orb){

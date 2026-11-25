@@ -70,7 +70,7 @@ body.pcw-home-dark{
 @media (prefers-reduced-motion:reduce){
   .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:0}
 }
-@keyframes pcw-marq{to{transform:translateX(-100%)}}
+
 .pcw-lede .nowrap,.lead .nowrap{white-space:nowrap}
 
 /* 3D gating: stills mode never shows the canvas */
