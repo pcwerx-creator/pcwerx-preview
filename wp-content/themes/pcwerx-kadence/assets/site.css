@@ -553,13 +553,9 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 .header-phone,.header-phone:hover,.header-phone:focus-visible,.header-phone *,.header-phone .pcw-ico,.header-phone small,.header-phone .pcw-morph__a,.header-phone .pcw-morph__b{color:#fff!important}
 .header-phone small{opacity:1!important}
 .pcw-btn--gold,.pcw-btn--gold:hover,.pcw-btn--gold:focus-visible,.pcw-btn--gold *,.pcw-btn--pop,.pcw-btn--pop:hover,.pcw-btn--pop:focus-visible,.pcw-btn--pop .pcw-morph__a,.pcw-btn--pop .pcw-morph__b,.pcw-btn--pop .pcw-arrow{color:#111!important}
-/* Header logo ~30% bigger (Danny, Nov 24 2026 ~10:17 PM): explicit width + height (614x204 source ratio) so nothing shifts. */
-.pcw-brand img{width:247px!important;height:82px!important;max-width:none}
+.pcw-logo-pic{display:block;line-height:0}
+/* A2 header logo (Danny t124u): same +30% width, height from the 600x192 PNG ratio. No extra CSS shading: artwork carries its own. */
+.pcw-brand img{width:247px!important;height:79.04px!important;max-width:none}
 .header-inner{min-height:96px}
-@media(max-width:767px){.pcw-brand img{width:195px!important;height:65px!important}.header-inner{min-height:84px;gap:12px}}
-@media(max-width:380px){.pcw-brand img{width:168px!important;height:56px!important}}
-/* dark headers: the blue "werx" lifts off the black with a soft light behind the logo and a fine white edge (CSS only, image untouched) */
-.pcw-dark .pcw-brand,.pcw-home-dark .pcw-brand{position:relative;isolation:isolate}
-.pcw-dark .pcw-brand::before,.pcw-home-dark .pcw-brand::before{content:"";position:absolute;z-index:-1;left:-10%;top:-22%;width:120%;height:118%;pointer-events:none;
- background:radial-gradient(closest-side,rgba(255,255,255,.10),rgba(120,170,255,.06) 55%,rgba(120,170,255,0) 100%)}
-.pcw-dark .pcw-brand img,.pcw-home-dark .pcw-brand img{filter:drop-shadow(0 0 1px rgba(255,255,255,.85)) drop-shadow(0 0 10px rgba(120,170,255,.35))}
+@media(max-width:767px){.pcw-brand img{width:195px!important;height:62.4px!important}.header-inner{min-height:84px;gap:12px}}
+@media(max-width:380px){.pcw-brand img{width:168px!important;height:53.76px!important}}
