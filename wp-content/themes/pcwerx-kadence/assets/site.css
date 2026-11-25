@@ -630,3 +630,7 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 .footer-logo .pcw-logo-pic{display:block;line-height:0}
 .footer-logo img.pcw-logo-img--d2{width:230px!important;height:auto!important;max-width:100%}
 @media(max-width:767px){.footer-logo img.pcw-logo-img--d2{width:210px!important}}
+
+/* Footer privacy link (Danny t227, Nov 25 2026) */
+.footer-bottom .footer-privacy{margin-left:12px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.footer-bottom .footer-privacy:hover,.footer-bottom .footer-privacy:focus-visible{color:#E2BC6A}
