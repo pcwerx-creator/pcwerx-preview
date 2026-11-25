@@ -1,0 +1,40 @@
+.pcw-chat{position:fixed;right:18px;bottom:18px;z-index:9995;width:380px;max-width:calc(100vw - 24px);height:min(600px,calc(100vh - 36px));display:none;flex-direction:column;background:#fff;border:1px solid #d6e0eb;border-radius:18px;box-shadow:0 24px 60px -18px rgba(11,34,64,.45);overflow:hidden;font:400 15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#111}
+.pcw-chat.is-open{display:flex}
+.pcw-chat__head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,#0B2A4F,#0E4C8A);color:#fff;border-bottom:2px solid #C6A15A}
+.pcw-chat__dot{width:10px;height:10px;border-radius:50%;background:#C6A15A;box-shadow:0 0 0 4px rgba(198,161,90,.25);flex:0 0 auto}
+.pcw-chat__head b{display:block;font-size:16px}.pcw-chat__head small{display:block;opacity:.85;font:500 11.5px/1.3 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.04em}
+.pcw-chat__acts{margin-left:auto;display:flex;gap:6px}
+.pcw-chat__acts a,.pcw-chat__acts button{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;cursor:pointer;text-decoration:none}
+.pcw-chat__acts a:hover,.pcw-chat__acts button:hover{background:rgba(255,255,255,.22)}
+.pcw-chat__acts :focus-visible,.pcw-chat button:focus-visible,.pcw-chat input:focus-visible,.pcw-chat textarea:focus-visible{outline:3px solid #C6A15A;outline-offset:2px}
+.pcw-chat__log{flex:1;overflow-y:auto;padding:14px;background:#F4F7FB;overscroll-behavior:contain}
+.pcw-msg{max-width:90%;margin:0 0 10px;padding:10px 13px;border-radius:14px;word-wrap:break-word}
+.pcw-msg p{margin:0 0 6px}.pcw-msg p:last-child{margin:0}
+.pcw-msg a{color:#0E4C8A;text-decoration:underline}
+.pcw-msg--bot{background:#fff;border:1px solid #dde5ee;border-top-left-radius:4px}
+.pcw-msg--me{background:#0E4C8A;color:#fff;margin-left:auto;border-top-right-radius:4px}
+.pcw-msg__q{display:block;font-weight:700;margin-bottom:4px}
+.pcw-msg__more{display:inline-block;margin-top:6px;font:600 12px/1 ui-monospace,Menlo,Consolas,monospace}
+.pcw-chips2{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.pcw-chips2 button{background:#fff;border:1px solid #0E4C8A;color:#0E4C8A;border-radius:999px;padding:7px 11px;font:600 13px/1.2 inherit;font-family:inherit;cursor:pointer;text-align:left}
+.pcw-chips2 button:hover{background:#E8F0F8}
+.pcw-chat__note{margin:0;padding:6px 14px;font-size:11.5px;color:#4b5563;background:#fff;border-top:1px solid #e5eaf0}
+.pcw-chat__form{display:flex;gap:8px;padding:10px;background:#fff;border-top:1px solid #e5eaf0}
+.pcw-chat__form input{flex:1;min-width:0;border:1px solid #c9d3de;border-radius:12px;padding:11px 12px;font:inherit;font-size:16px}
+.pcw-chat__form button{background:#0E4C8A;color:#fff;border:0;border-radius:12px;padding:0 16px;font-weight:700;cursor:pointer;font-family:inherit}
+.pcw-lead2 label{display:block;font-size:13px;font-weight:600;margin:8px 0 3px}
+.pcw-lead2 input,.pcw-lead2 textarea{width:100%;box-sizing:border-box;border:1px solid #c9d3de;border-radius:10px;padding:9px;font:inherit;font-size:16px}
+.pcw-lead2 textarea{height:70px}.pcw-lead2 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pcw-lead2 button{margin-top:10px;width:100%;background:#0E4C8A;color:#fff;border:0;border-radius:10px;padding:11px;font-weight:700;cursor:pointer;font-family:inherit}
+.pcw-lead2 .err{color:#b00020;font-size:13px;margin-top:6px}
+.pcw-typing{display:inline-flex;gap:4px}.pcw-typing i{width:6px;height:6px;border-radius:50%;background:#8aa2bd;animation:pcwt 1s infinite}.pcw-typing i:nth-child(2){animation-delay:.15s}.pcw-typing i:nth-child(3){animation-delay:.3s}
+@keyframes pcwt{50%{opacity:.3;transform:translateY(-2px)}}
+.pcw-chat.is-open~.pcw-chat-launch,.pcw-chat-launch[aria-expanded=true]{display:none}
+@media(max-width:600px){.pcw-chat{right:0;left:0;bottom:0;width:100%;max-width:none;height:88vh;height:88dvh;border-radius:18px 18px 0 0}}
+@media(prefers-reduced-motion:reduce){.pcw-typing i{animation:none}}
+.pcw-chat__logo{display:grid;place-items:center;flex:0 0 auto;background:#fff;border-radius:7px;padding:5px;width:70px;margin-right:0}
+.pcw-chat__logo img{width:60px;height:auto;display:block}
+.pcw-chat__head{gap:8px}.pcw-chat__head>div:not(.pcw-chat__acts){min-width:0}.pcw-chat__head b{font-size:13px}.pcw-chat__head small{font-size:10px}
+@media(max-width:480px){.pcw-chat__logo{width:57px;padding:4px}.pcw-chat__logo img{width:49px}.pcw-chat__head{gap:5px}.pcw-chat__head b{font-size:12px}.pcw-chat__head small{font-size:9px}}
+.pcw-chat__logo{background:transparent;padding:0;width:72px}.pcw-chat__logo img{width:72px}
+@media(max-width:480px){.pcw-chat__logo{width:60px}.pcw-chat__logo img{width:60px}}
