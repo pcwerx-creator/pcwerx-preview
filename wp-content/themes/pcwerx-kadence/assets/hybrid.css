@@ -1,0 +1,88 @@
+/* Mix home (ported from 8096 to 8089 on Nov 24 2026, Danny approved the mix): 8089 PC zoom pin, then handoff into the Option C network scene.
+   Does not change 8089 / 8095 / 8088. Blue / white / gold only. */
+
+/* Keep the page itself on the Option C near-black; the zoom hero paints its own stage. */
+body.pcw-home-dark{
+  background:#090b0e;
+  background-image:none;
+  color:#f4f7fb;
+}
+
+/* Extra pin travel after the zoom so the PC can shrink into the chip, then we hold on the network. */
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 210vh)}
+@media (max-width:899px){
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 520px + 110vh)}
+}
+
+/* Network scene lives in the sticky stage, under the PC, faded in during the handoff. */
+.hybrid-net{position:absolute;inset:0;z-index:0;opacity:0;pointer-events:none;background:#090b0e}
+.hybrid-net .poster,.hybrid-net .poster img,#gl{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#gl{opacity:0;transition:opacity .8s ease}#gl.on{opacity:1}
+.gl-ready .hybrid-net .poster{opacity:0;transition:opacity .8s ease}
+.pcw-hero.is-zoom.is-network .hybrid-net{pointer-events:none}
+
+/* Soft left-to-right fade so the network copy stays readable once the 3D is on. */
+.hybrid-net::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,#090b0ef0 0,#090b0eb0 28%,#090b0e00 58%),linear-gradient(0deg,#090b0e 0,#090b0e00 18%)}
+@media (max-width:899px){
+  .hybrid-net::after{background:linear-gradient(180deg,#090b0e00 0,#090b0e88 42%,#090b0ef2 78%)}
+}
+
+/* Business IT copy: same pin stack as the "Expert repair" panel, faded in during the handoff. */
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net{
+  display:flex;flex-direction:column;justify-content:center;position:sticky;top:var(--hdr,76px);z-index:2;
+  height:var(--vh);min-height:540px;max-width:34rem;margin:0;opacity:0;transform:none;pointer-events:none;align-self:start;color:#D6E2F0
+}
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .pcw-eyebrow{margin-bottom:14px}
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net-title{font:800 clamp(2rem,1.2rem + 2.4vw,3.2rem)/1.08 var(--sans);letter-spacing:-.03em;color:#fff;margin:0 0 14px;
+  text-shadow:0 2px 18px rgba(0,0,0,.85),0 0 40px rgba(5,6,7,.8)}
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net p{margin:0 0 1em;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .net-chips{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:18px 0 0;padding:0}
+.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .net-chips li{
+  font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#E8EEF6;
+  border:1px solid rgba(90,162,255,.38);background:rgba(5,7,10,.72);border-radius:999px;padding:7px 11px
+}
+@media (max-width:899px){
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net{
+    justify-content:flex-end;max-width:none;min-height:0;margin:0 calc((100% - 100vw) / 2);
+    padding:0 20px 28px;background:linear-gradient(0deg,rgba(5,6,7,.94) 0,rgba(5,6,7,.82) 36%,rgba(5,6,7,0) 62%)
+  }
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net-title{font-size:2rem;margin-bottom:10px}
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net p:not(.pcw-hero__net-title){font-size:15px}
+}
+
+/* Handoff: JS writes opacity/transform only. Orbit and callouts fade with the PC. */
+.pcw-hero.is-zoom.is-handoff .pcw-float,
+.pcw-hero.is-zoom.is-network .pcw-float{pointer-events:none}
+.pcw-hero.is-zoom.is-network .pcw-callouts{opacity:0}
+
+/* Stills / reduced-motion fallback: a normal (unpinned) network band after the hero. */
+.net-fallback{display:none;position:relative;min-height:72vh;overflow:hidden;background:#090b0e}
+.net-fallback.is-on{display:block}
+.net-fallback .poster,.net-fallback .poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.net-fallback::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#090b0ef2 0,#090b0eb8 36%,#090b0e00 68%),linear-gradient(0deg,#090b0e 0,#090b0e00 22%)}
+.net-fallback .wrap{position:relative;z-index:2;min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:48px 0}
+@media (max-width:899px){
+  .net-fallback::after{background:linear-gradient(180deg,#090b0e66 0,#090b0ee8 70%)}
+  .net-fallback .wrap{padding-top:36px;justify-content:flex-end;padding-bottom:40px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:0}
+}
+@keyframes pcw-marq{to{transform:translateX(-100%)}}
+.pcw-lede .nowrap,.lead .nowrap{white-space:nowrap}
+
+/* 3D gating: stills mode never shows the canvas */
+.m-stills #gl{display:none}
+/* WP markup for the still fallback band (reduced motion) */
+.net-fallback .pcw-netbg{position:absolute;inset:0}
+.net-fallback .pcw-netbg .poster{position:absolute;inset:0}
+.net-fallback .container{position:relative;z-index:2;min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding-top:48px;padding-bottom:48px}
+.net-fallback .hero-in{max-width:620px}
+.net-fallback h2{color:#fff;font-size:clamp(2rem,1.2rem + 2.4vw,3.2rem);line-height:1.08;margin:0 0 14px}
+.net-fallback h2 em{font-style:normal;color:#E2BC6A}
+.net-fallback .lead{color:#C9D3DF;max-width:34em}
+.net-fallback .net-chips{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:18px 0 0;padding:0}
+.net-fallback .net-chips li{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#E8EEF6;border:1px solid rgba(90,162,255,.38);background:rgba(5,7,10,.72);border-radius:999px;padding:7px 11px}
+@media (max-width:899px){.net-fallback .container{justify-content:flex-end;padding-bottom:40px}}
