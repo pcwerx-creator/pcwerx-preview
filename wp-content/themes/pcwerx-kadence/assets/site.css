@@ -37,7 +37,7 @@ p{margin:0 0 1em}
 .pcw-nav>li{position:relative}
 .pcw-nav a{display:block;padding:10px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
 .pcw-nav a:hover,.pcw-nav .current-menu-item>a,.pcw-nav .current-menu-ancestor>a{color:var(--blue);background:var(--blue-soft)}
-.pcw-nav>li:first-child>a{color:var(--blue)}
+.pcw-nav>li:first-child:not(.menu-item-home)>a,.pcw-nav>li.menu-item-home+li>a{color:var(--blue)}
 .pcw-nav .menu-item-has-children>a::after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 3px 8px;opacity:.6}
 .pcw-nav .sub-menu{position:absolute;left:0;top:100%;min-width:270px;list-style:none;margin:0;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh);opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
 .pcw-nav li:hover>.sub-menu,.pcw-nav li:focus-within>.sub-menu{opacity:1;visibility:visible;transform:none}
@@ -568,11 +568,11 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 .header-phone small{opacity:1!important}
 .pcw-btn--gold,.pcw-btn--gold:hover,.pcw-btn--gold:focus-visible,.pcw-btn--gold *,.pcw-btn--pop,.pcw-btn--pop:hover,.pcw-btn--pop:focus-visible,.pcw-btn--pop .pcw-morph__a,.pcw-btn--pop .pcw-morph__b,.pcw-btn--pop .pcw-arrow{color:#111!important}
 .pcw-logo-pic{display:block;line-height:0}
-/* A2 header logo (Danny t124u): same +30% width, height from the 600x192 PNG ratio. No extra CSS shading: artwork carries its own. */
-.pcw-brand img{width:247px!important;height:79.04px!important;max-width:none}
+/* D2 all-gold header logo (Nov 25 10:55 AM): same rendered height as A2 (79.04 / 62.4 / 53.76), width from the 600x196 ratio. */
+.pcw-brand img{width:242px!important;height:79.04px!important;max-width:none}
 .header-inner{min-height:96px}
-@media(max-width:767px){.pcw-brand img{width:195px!important;height:62.4px!important}.header-inner{min-height:84px;gap:12px}}
-@media(max-width:380px){.pcw-brand img{width:168px!important;height:53.76px!important}}
+@media(max-width:767px){.pcw-brand img{width:191px!important;height:62.4px!important}.header-inner{min-height:84px;gap:12px}}
+@media(max-width:380px){.pcw-brand img{width:164.6px!important;height:53.76px!important}}
 /* hero stat row (Nov 25, Danny t134u "Fast remote help / usually within the hour"): always one row of 3; big lines never wrap,
    the small lines wrap inside their column; a little smaller on phones */
 .pcw-proof{display:grid;grid-template-columns:repeat(3,auto);justify-content:start}

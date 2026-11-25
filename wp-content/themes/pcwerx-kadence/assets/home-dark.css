@@ -19,7 +19,7 @@ body.pcw-home-dark{
 .pcw-home-dark .pcw-header{background:rgba(5,6,7,.86);border-bottom:1px solid var(--hline);backdrop-filter:saturate(1.2) blur(12px)}
 .pcw-home-dark .pcw-brand span{color:var(--muted)}
 .pcw-home-dark .pcw-nav a{color:#E8EEF6}
-.pcw-home-dark .pcw-nav>li:first-child>a{color:var(--hb)}
+.pcw-home-dark .pcw-nav>li:first-child:not(.menu-item-home)>a,.pcw-home-dark .pcw-nav>li.menu-item-home+li>a{color:var(--hb)}
 .pcw-home-dark .pcw-nav a:hover,.pcw-home-dark .pcw-nav .current-menu-item>a,.pcw-home-dark .pcw-nav .current-menu-ancestor>a{color:#fff;background:rgba(47,123,255,.16)}
 .pcw-home-dark .pcw-nav .sub-menu{background:#0B0E12;border-color:var(--hline);box-shadow:0 20px 50px -20px #000}
 .pcw-home-dark .nav-toggle{border-color:var(--hline-2);background:#0B0E12}.pcw-home-dark .nav-toggle span{background:#fff}
@@ -256,3 +256,11 @@ body.pcw-home-dark{
  .pcw-home-dark .pcw-callout i{left:-6px;top:-6px;width:12px;height:12px}
 }
 .pcw-home-dark .pcw-hero:not(.is-zoom) .pcw-callouts,.pcw-home-dark .pcw-hero:not(.is-zoom) .pcw-zoomcrop{display:none}
+/* Scroll-story eyebrow "[ COMPUTER REPAIR · DIAGNOSTICS ]" (Nov 25 10:45 AM): one line on phones down to 320px */
+@media (max-width:767px){.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__next p.pcw-eyebrow{font-size:clamp(11px,3.4vw,13px);letter-spacing:.12em;white-space:nowrap}}
+/* Home H1 (Nov 25 10:52 AM): "Computer Repair" / "& IT Services" on two lines at every width, a touch more air before the gold line and lede */
+.pcw-home-dark .pcw-hero h1{line-height:1.12;margin-bottom:28px;max-width:none}
+.pcw-home-dark .pcw-hero h1 .pcw-h1-l{display:block;white-space:nowrap}
+.pcw-home-dark .pcw-hero h1 .pcw-h1-sub{margin-top:.55em}
+@media (max-width:767px){.pcw-home-dark .pcw-hero h1{margin-bottom:22px}}
+@media (min-width:768px){.pcw-home-dark .pcw-hero h1{font-size:clamp(2.4rem,3.7vw,3rem)}.pcw-home-dark .pcw-hero .pcw-lede{max-width:26rem}}
