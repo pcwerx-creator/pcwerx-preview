@@ -13,6 +13,7 @@
   var hero=d.querySelector('[data-pcw-hero]'); if(!hero) return;
   if(hero.classList.contains('is-zoom')) return; /* dark home: pinned zoom lives in home-hero.js */
   var obj=hero.querySelector('.pcw-float'); if(!obj) return;
+  if(d.body.classList.contains('pcw-bizit')) return; /* Business IT: pictures stay still and flat (Danny, Nov 25) */
   var mode=hero.getAttribute('data-motion'), mobile=w.matchMedia('(max-width: 899px)').matches;
   var dark=d.body.classList.contains('pcw-home-dark'), push=mode==='pushin'&&!mobile, lite=mode==='pushin'&&mobile&&dark, stage=hero.querySelector('.pcw-hero__stage');
   if(lite) hero.classList.add('is-lite');

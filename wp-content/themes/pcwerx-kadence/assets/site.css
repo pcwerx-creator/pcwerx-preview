@@ -599,3 +599,12 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 /* WWL-15 hours: two lines, day range and time aligned in columns */
 .pcw-hours{display:inline-grid;grid-template-columns:auto auto;column-gap:1.6em;row-gap:.2em;justify-content:start;text-align:left}
 .pcw-hours__n{grid-column:1/-1}
+
+/* Live Google reviews widget (only renders once a Places API key + Place ID are set) */
+.pcw-reviews--live .pcw-gr__score{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:17px}
+.pcw-reviews--live .pcw-gr__score strong{font-size:30px;line-height:1}
+.pcw-gr__stars{position:relative;display:inline-block;letter-spacing:2px;color:rgba(255,255,255,.22);background:linear-gradient(90deg,#E2BC6A calc(var(--r)/5*100%),rgba(255,255,255,.22) 0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pcw-gr__list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.pcw-gr__item{border:1px solid rgba(198,161,90,.35);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.04)}
+.pcw-gr__meta{margin:0 0 8px;font-size:14px}.pcw-gr__text{margin:0;font-size:15px;line-height:1.55}
+.pcw-gr__src{margin:14px 0 0;font-size:12px;opacity:.75}
