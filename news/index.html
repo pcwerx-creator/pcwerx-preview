@@ -204,7 +204,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 .site-bottom-footer-inner-wrap{padding-top:30px;padding-bottom:30px;grid-column-gap:30px;}.site-bottom-footer-inner-wrap .widget{margin-bottom:30px;}.site-bottom-footer-inner-wrap .site-footer-section:not(:last-child):after{right:calc(-30px / 2);}
 /*# sourceURL=kadence-global-inline-css */
 </style>
-<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795617284' media='all' />
+<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795622314' media='all' />
 <link rel='stylesheet' id='kadence-content-css' href='/pcwerx-preview/wp-content/themes/kadence/assets/css/content.min.css?ver=1795542162' media='all' />
 <style id="pcw-inner-dark-inline-css">
 /* PC Werx inner pages, dark (mix home style). Danny, Nov 24 2026 ~9:45 PM ("Ok let's see it").
@@ -229,7 +229,7 @@ body.pcw-dark{
 .pcw-dark .pcw-header{background:rgba(5,6,7,.86);border-bottom:1px solid var(--hline);backdrop-filter:saturate(1.2) blur(12px)}
 .pcw-dark .pcw-brand span{color:var(--muted)}
 .pcw-dark .pcw-nav a{color:#E8EEF6}
-.pcw-dark .pcw-nav>li:first-child>a{color:var(--hb)}
+.pcw-dark .pcw-nav>li:first-child:not(.menu-item-home)>a,.pcw-dark .pcw-nav>li.menu-item-home+li>a{color:var(--hb)}
 .pcw-dark .pcw-nav a:hover,.pcw-dark .pcw-nav .current-menu-item>a,.pcw-dark .pcw-nav .current-menu-ancestor>a{color:#fff;background:rgba(47,123,255,.16)}
 .pcw-dark .pcw-nav .sub-menu{background:#0B0E12;border-color:var(--hline);box-shadow:0 20px 50px -20px #000}
 .pcw-dark .nav-toggle{border-color:var(--hline-2);background:#0B0E12}.pcw-dark .nav-toggle span{background:#fff}
@@ -369,6 +369,19 @@ body.pcw-dark{
  .pcw-netbg picture{height:560px;bottom:auto}
  .pcw-netbg::after{background:linear-gradient(180deg,#090b0e00 0,#090b0e66 30%,#090b0e 52%)}
 }
+/* ---- Danny's picked 4:3 hero scenes (Nov 25 10:35 AM): opaque photo in the same right-column stage, like the VoIP hero */
+.pcw-dark .pcw-float--pick{display:flex;align-items:center;justify-content:center}
+.pcw-dark .pcw-float--pick .pcw-float__img{height:auto;aspect-ratio:4/3;object-fit:cover;mix-blend-mode:normal;border-radius:18px;border:1px solid var(--hline-2);filter:drop-shadow(0 30px 40px rgba(0,0,0,.75)) drop-shadow(0 0 30px rgba(47,123,255,.16))}
+/* ---- Contact hero details list (Nov 25 10:50 AM): gold label column, white values */
+.pcw-dark .pcw-contact-list{display:grid;gap:14px;margin:6px 0 30px;padding:0;font-size:clamp(1.05rem,.9rem + .5vw,1.28rem);line-height:1.45}
+.pcw-dark .pcw-contact-list__row{display:grid;grid-template-columns:7.2rem 1fr;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--hline)}
+.pcw-dark .pcw-contact-list__row:last-child{border-bottom:0;padding-bottom:0}
+.pcw-dark .pcw-contact-list dt{display:flex;align-items:center;gap:9px;margin:0;font:600 .72em/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#E2BC6A;align-self:center}
+.pcw-dark .pcw-contact-list dt .pcw-ico{flex:none;width:18px;height:18px;color:#E9C77B}
+.pcw-dark .pcw-contact-list dd{margin:0;color:#fff;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.pcw-dark .pcw-contact-list dd a{color:#fff;text-decoration:underline;text-decoration-color:rgba(226,188,106,.55);text-underline-offset:4px}
+.pcw-dark .pcw-contact-list dd a:hover,.pcw-dark .pcw-contact-list dd a:focus-visible{color:#E9C77B}
+@media (max-width:767px){.pcw-dark .pcw-contact-list{gap:12px;font-size:1.06rem}.pcw-dark .pcw-contact-list__row{grid-template-columns:1fr;gap:4px;padding-bottom:12px}.pcw-dark .pcw-contact-list dt{font-size:.74rem}}
 
 /*# sourceURL=pcw-inner-dark-inline-css */
 </style>
@@ -397,9 +410,10 @@ body.pcw-dark{
 <div class="preview-ribbon">PRIVATE WORKING COPY · NOT LIVE</div>
 <div class="utility"><div class="container"><span class="u-since">Local expertise since 2006 <i></i> Hamilton and surrounding area</span><a href="mailto:support@pcwerx.ca">support@pcwerx.ca</a><span class="u-hours">Mon–Fri 9 AM–7 PM <i></i> Weekends by appointment only</span><ul class="pcw-social pcw-social--top"><li><a href="https://g.page/pcwerxx" target="_blank" rel="noopener" aria-label="PC Werx on Google Business Profile (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2a7.2 7.2 0 0 1-6.8-5H1.2v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.2 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.2a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8L20.1 3A12 12 0 0 0 1.2 6.6l4 3.1a7.2 7.2 0 0 1 6.8-4.9z"/></svg></a></li><li><a href="https://www.instagram.com/pcwerx" target="_blank" rel="noopener" aria-label="PC Werx on Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><defs><linearGradient id="pcwig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F58529"/><stop offset=".5" stop-color="#DD2A7B"/><stop offset="1" stop-color="#515BD4"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#pcwig)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1" fill="#fff"/></svg></a></li><li><a href="https://twitter.com/PCWerx" target="_blank" rel="noopener" aria-label="PC Werx on X (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="6" fill="#111"/><path fill="#fff" d="M13.3 10.8 18.6 5h-1.3l-4.6 5-3.6-5H5l5.5 7.8L5 19h1.3l4.8-5.3 3.9 5.3H19zm-1.7 1.9-.6-.8L6.7 6h1.9l3.6 5 .6.8 4.6 6.3h-1.9z"/></svg></a></li><li><a href="https://www.facebook.com/pcwerxx/" target="_blank" rel="noopener" aria-label="PC Werx on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="6" fill="#1877F2"/><path fill="#fff" d="M15.6 12.6h-2.3V20h-3v-7.4H8.8V10h1.5V8.3c0-2.2 1-3.3 3.4-3.3h2v2.6h-1.3c-.9 0-1.1.3-1.1 1V10h2.5z"/></svg></a></li><li><a href="https://www.youtube.com/@PCWerx" target="_blank" rel="noopener" aria-label="PC Werx on YouTube (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="6" fill="#FF0000"/><path fill="#fff" d="m10 8.5 6 3.5-6 3.5z"/></svg></a></li></ul></div></div>
 <header class="pcw-header"><div class="container header-inner">
-<a class="pcw-brand" href="/pcwerx-preview/" aria-label="PC Werx home"><picture class="pcw-logo-pic"><source type="image/webp" srcset="/pcwerx-preview/wp-content/uploads/brand/logo-header-a2.webp?v=1795578151 1x, /pcwerx-preview/wp-content/uploads/brand/logo-header-a2@2x.webp?v=1795578155 2x"><img class="pcw-logo-img pcw-logo-img--a2" src="/pcwerx-preview/wp-content/uploads/brand/logo-header-a2.png?v=1795578148" srcset="/pcwerx-preview/wp-content/uploads/brand/logo-header-a2.png?v=1795578148 1x, /pcwerx-preview/wp-content/uploads/brand/logo-header-a2@2x.png?v=1795578148 2x" width="600" height="192" alt="PC Werx" decoding="async" fetchpriority="low"></picture><span>Computer Repair &amp; IT Services</span></a>
+<a class="pcw-brand" href="/pcwerx-preview/" aria-label="PC Werx home"><picture class="pcw-logo-pic"><source type="image/webp" srcset="/pcwerx-preview/wp-content/uploads/brand/logo-header-d2.webp?v=1795622030 1x, /pcwerx-preview/wp-content/uploads/brand/logo-header-d2@2x.webp?v=1795622034 2x"><img class="pcw-logo-img pcw-logo-img--d2" src="/pcwerx-preview/wp-content/uploads/brand/logo-header-d2.png?v=1795622026" srcset="/pcwerx-preview/wp-content/uploads/brand/logo-header-d2.png?v=1795622026 1x, /pcwerx-preview/wp-content/uploads/brand/logo-header-d2@2x.png?v=1795622026 2x" width="600" height="196" alt="PC Werx" decoding="async" fetchpriority="low"></picture><span>Computer Repair &amp; IT Services</span></a>
 <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span><b class="screen-reader-text">Open menu</b></button>
-<nav id="primary-nav" aria-label="Main navigation"><ul id="menu-primary" class="pcw-nav"><li id="menu-item-874" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-874"><a href="/pcwerx-preview/business-services/">Business IT</a>
+<nav id="primary-nav" aria-label="Main navigation"><ul id="menu-primary" class="pcw-nav"><li id="menu-item-898" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-898"><a href="/pcwerx-preview/">Home</a></li>
+<li id="menu-item-874" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-874"><a href="/pcwerx-preview/business-services/">Business IT</a>
 <ul class="sub-menu">
 	<li id="menu-item-876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-876"><a href="/pcwerx-preview/about-network-design-integration/">Network Design &#038; Installation</a></li>
 	<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="/pcwerx-preview/business-services/backups-disaster-recovery/">Backup &#038; Disaster Recovery</a></li>
