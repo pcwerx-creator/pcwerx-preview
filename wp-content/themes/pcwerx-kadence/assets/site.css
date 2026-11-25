@@ -124,7 +124,6 @@ main#main{display:block}
 .pcw-awards li{width:112px;height:112px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px}
 .pcw-awards img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .pcw-awards a,.pcw-awards span{display:grid;place-items:center;width:100%;height:100%}
-.pcw-bbb{margin:22px 0 0;font:600 13px/1 var(--mono)}
 /* reviews */
 .pcw-reviews{padding:56px 0;background:linear-gradient(135deg,var(--blue) 0%,#0A3866 100%);color:#fff}
 .pcw-reviews h2{color:#fff}.pcw-reviews .pcw-eyebrow{color:var(--gold-2)}
@@ -319,7 +318,6 @@ h3{font-weight:750}
 .pcw-awards-wrap h2,.pcw-awards-title{color:#fff}
 .pcw-awards li{background:#fff;border-color:rgba(198,161,90,.5);box-shadow:0 16px 30px -18px rgba(0,0,0,.6)}
 .pcw-awards-wrap a:not(.pcw-awards a){color:var(--gold-2)}
-.pcw-bbb a{color:var(--gold-2)!important}
 .pcw-reviews{background:radial-gradient(600px 300px at 85% 20%,rgba(198,161,90,.22),transparent 60%),linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%)}
 /* glass service cards (homepage grid + imported card rows) */
 .pcw-svc-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -355,7 +353,6 @@ h3{font-weight:750}
 .footer-logo img{display:block;width:190px;height:auto}
 .footer-call{background:transparent;border:1px solid var(--gold-2);color:#fff!important}
 .footer-call:hover{background:var(--gold-2);color:#111!important}
-.footer-bbb img{background:#fff;border-radius:8px;padding:4px;margin-top:8px}
 .footer-bottom{border-top-color:rgba(255,255,255,.1);color:#8DA0B8}
 /* safe scroll reveal: only applied by JS to elements below the fold; never hides content without JS or with reduced motion */
 .pcw-js .pcw-rv-on{opacity:0;transform:translateY(22px)}
@@ -590,3 +587,15 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 /* diagram pills (Nov 25, Danny t135u): every HTML pill uses the 'Firewall & Router' style; white text, gold dot.
    For Pixel: fill #0E4C8A at 92% over the #0b0f1a frame (= #0E4781 solid), 1px border #E2BC6A, text #FFFFFF (contrast 9.39:1) */
 .pcw-diagram .pcw-diagram__labels .pcw-pill{background:rgba(14,76,138,.92);border:1px solid #E2BC6A;color:#fff!important}
+/* WWL-19 (Nov 25 11:25 AM): accreditation badge item removed, trust strip is 4 items. 4 across, then 2x2, no empty cell. */
+.pcw-trust ul{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1180px){.pcw-trust ul{grid-template-columns:repeat(2,1fr)}.pcw-trust li:nth-child(odd){border-left:0}.pcw-trust li:nth-child(4){border-left:1px solid var(--line)}.pcw-trust li:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:767px){.pcw-trust li:first-child{grid-column:auto}.pcw-trust li:nth-child(2){border-top:0}}
+
+/* WWL-21 (Nov 25 11:42 AM): Pixel review button 3 (Danny pick), from /workspace/brand/review-button/review-buttons.css; button-1/2 rules left out. */
+/* PC Werx 'Review us on Google' buttons. System font stack (Inter used if installed). */ .rb{box-sizing:border-box;display:inline-flex;align-items:center;text-decoration:none;font-family:Inter, "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing:antialiased;line-height:1.1;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease} .rb *{box-sizing:border-box} .rb .rb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap} .rb:focus-visible{outline:3px solid #E2BC6A;outline-offset:3px;box-shadow:0 0 0 6px #0E4C8A} .rb .rb-txt{display:flex;flex-direction:column;gap:5px} .rb .rb-label{font-size:16px;font-weight:650;letter-spacing:.01em;white-space:nowrap} @media (prefers-reduced-motion:reduce){.rb{transition:none}.rb:hover{transform:none!important}} .rb--3{gap:14px;padding:10px 24px 10px 10px;border-radius:999px;color:#fff;position:relative;overflow:hidden; background:linear-gradient(135deg,#1A5FA3 0%,#0E4C8A 50%,#0A3768 100%);border:1px solid rgba(226,188,106,.85); box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -8px 16px rgba(11,15,26,.25),0 8px 22px rgba(14,76,138,.35)} .rb--3::before{content:"";position:absolute;inset:0 0 50% 0;border-radius:999px 999px 0 0; background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0));pointer-events:none} .rb--3 .rb-gwrap{position:relative;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%; background:#fff;box-shadow:0 2px 6px rgba(11,15,26,.3)} .rb--3 .rb-txt{position:relative} .rb--3 .rb-label{color:#fff;text-shadow:0 1px 1px rgba(11,15,26,.35)} .rb--3:hover{transform:translateY(-2px);background:linear-gradient(135deg,#1F6AB3 0%,#1155A0 50%,#0B3D74 100%);border-color:#E2BC6A; box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 -8px 16px rgba(11,15,26,.25),0 0 0 3px rgba(226,188,106,.22),0 12px 28px rgba(14,76,138,.45)}
+.wp-block-shortcode .rb,.pcw-review-btn{margin:6px 0 14px}
+.pcw-review-btn{display:block}
+/* WWL-15 hours: two lines, day range and time aligned in columns */
+.pcw-hours{display:inline-grid;grid-template-columns:auto auto;column-gap:1.6em;row-gap:.2em;justify-content:start;text-align:left}
+.pcw-hours__n{grid-column:1/-1}

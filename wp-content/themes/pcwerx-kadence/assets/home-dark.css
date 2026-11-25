@@ -2,7 +2,7 @@
    Loaded only on the home page when option pcw_home_style != 'light' (plugin home-dark.php). Revert: option update pcw_home_style light. */
 body.pcw-home-dark{
  --k0:#050607;--k1:#0B0D0E;--k2:#11151B;--hb:#5AA2FF;--hb-2:#2F7BFF;--hline:rgba(90,162,255,.18);--hline-2:rgba(90,162,255,.34);
- --bg:#07090B;--card:#0F1318;--ink:#F3F6FA;--ink-2:#C9D3DF;--muted:#9EABBB;--line:rgba(90,162,255,.16);--blue:#6FB0FF;--blue-2:#9CC8FF;--blue-soft:rgba(47,123,255,.12);--gold:#E2BC6A;--gold-2:#C6A15A;
+ --bg:#07090B;--card:#0F1318;--ink:#F3F6FA;--ink-2:#C9D3DF;--muted:rgb(158,171,187);--line:rgba(90,162,255,.16);--blue:#6FB0FF;--blue-2:#9CC8FF;--blue-soft:rgba(47,123,255,.12);--gold:#E2BC6A;--gold-2:#C6A15A;
  --glass:rgba(15,19,24,.92);--sh:0 1px 0 rgba(255,255,255,.03) inset,0 20px 40px -24px rgba(0,0,0,.9);--glass-line:var(--hline);
  background:var(--k0);color:var(--ink-2);
  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:44px 44px;background-attachment:fixed}
@@ -91,7 +91,7 @@ body.pcw-home-dark{
 .pcw-home-dark .pcw-svc__ico,.pcw-home-dark .pcw-card-ico{background:rgba(47,123,255,.12)!important;color:var(--hb)!important;border:1px solid var(--hline)}
 .pcw-home-dark .pcw-sec img{border-radius:12px}
 .pcw-home-dark .pcw-sec .wp-block-image img{background:radial-gradient(circle at 50% 45%,#1A2230,#0B0E12 70%)}
-.pcw-home-dark .pcw-sec .wp-block-image img[src*="/pix-"],.pcw-home-dark .pcw-sec .wp-block-image img[src*="pix2-"]{background:radial-gradient(circle at 50% 45%,#E9EEF4 0,#C9D3DF 60%,#9EABBB 100%)}
+.pcw-home-dark .pcw-sec .wp-block-image img[src*="/pix-"],.pcw-home-dark .pcw-sec .wp-block-image img[src*="pix2-"]{background:radial-gradient(circle at 50% 45%,#E9EEF4 0,#C9D3DF 60%,rgb(158,171,187) 100%)}
 .pcw-home-dark .pcw-sec ul li::marker{color:var(--hb)}
 .pcw-home-dark .pcw-reviews{background:transparent!important;border-top:1px solid var(--hline);border-bottom:1px solid var(--hline)}
 .pcw-home-dark .pcw-reviews .pcw-btn{background:#0F1318;color:#fff!important;border-color:var(--hline-2)}
@@ -110,7 +110,6 @@ body.pcw-home-dark{
 /* ---- footer on the home page: black with blue hairline */
 .pcw-home-dark .pcw-footer{background:linear-gradient(180deg,#07090B,#030405);border-top:1px solid var(--hline)}
 .pcw-home-dark .pcw-footer .footer-rule{background:linear-gradient(90deg,transparent,var(--hb-2),var(--gold-2),transparent)}
-.pcw-home-dark .footer-bbb img{background:#fff}
 /* ---- chat launcher on black */
 .pcw-home-dark .pcw-chat-launch{box-shadow:0 0 0 1px rgba(90,162,255,.4),0 10px 30px -8px rgba(47,123,255,.6)}
 

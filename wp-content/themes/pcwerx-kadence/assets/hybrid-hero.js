@@ -86,7 +86,7 @@
         net.style.opacity=np.toFixed(3);
         net.style.transform=mob?'':'translate3d('+(-36*(1-np)).toFixed(1)+'px,0,0)';
       }
-      if(layer){ layer.style.opacity=cl((h-.02)/.45).toFixed(3); }
+      if(layer){ var lo=cl((h-.02)/.45); layer.style.opacity=lo.toFixed(3); w.__pcwNetHold=lo<=0; } /* 3D renders nothing while its layer is invisible (WWL-18) */
       /* 3D camera progress: 0 while the chip is appearing, then a gentle dolly through the network hold */
       var netP=t<H1?0:cl((t-H1)/(1-H1))*0.55;
       w.__hybridNetP=netP;
@@ -100,14 +100,15 @@
       if(Math.abs(tgt-cur)<.0004){cur=tgt; apply(cur); raf=0; last=0; fl.style.willChange='auto'; return;}
       apply(cur); raf=requestAnimationFrame(loop); }
     function onScroll(){ tgt=cl((w.scrollY-g.pinStart)/g.range); if(!raf){fl.style.willChange='transform'; raf=requestAnimationFrame(loop);} }
-    function re(){ measure(); cur=-1; onScroll(); }
+    /* iOS fires resize as the address bar slides; the pin geometry uses svh/vh so only a width change needs a re-measure (WWL-18) */
+    var lastW=w.innerWidth; function re(e){ if(e&&e.type==='resize'&&w.innerWidth===lastW)return; lastW=w.innerWidth; measure(); cur=-1; onScroll(); }
     measure(); tgt=cl((w.scrollY-g.pinStart)/g.range); cur=tgt; apply(cur);
     addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',re,{passive:true});
     addEventListener('load',re); if(d.fonts&&d.fonts.ready)d.fonts.ready.then(re);
     /* sharp interior close-up: fetched on the first scroll/touch/key, or 3 s after load, never before the LCP image */
     var img=crop&&crop.querySelector('img'), done=false;
     function go(){ if(done||!img)return; done=true; var p=img.parentNode; Array.prototype.forEach.call(p.querySelectorAll('source[data-srcset]'),function(s){s.srcset=s.getAttribute('data-srcset');});
-      img.srcset=img.getAttribute('data-srcset'); ['scroll','pointerdown','touchstart','keydown'].forEach(function(e){removeEventListener(e,go);}); }
+      img.srcset=img.getAttribute('data-srcset'); if(img.decode)img.decode().catch(function(){}); /* decode before the zoom reveals it, not mid-scroll */ ['scroll','pointerdown','touchstart','keydown'].forEach(function(e){removeEventListener(e,go);}); }
     ['scroll','pointerdown','touchstart','keydown'].forEach(function(e){addEventListener(e,go,{passive:true});});
     if(d.readyState==='complete')setTimeout(go,3000); else addEventListener('load',function(){setTimeout(go,3000);});
     /* capture hooks */
