@@ -625,3 +625,8 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 .pcw-why{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .pcw-why li{position:relative;padding:14px 16px 14px 44px;border-radius:14px;border:1px solid rgba(90,162,255,.28);background:rgba(255,255,255,.035);font-weight:600}
 .pcw-why li::before{content:"";position:absolute;left:16px;top:50%;width:16px;height:9px;border:solid #E9C77B;border-width:0 0 2.5px 2.5px;transform:translateY(-70%) rotate(-45deg)}
+
+/* Footer logo = header all-gold D2 picture (Danny t208u, Nov 25 12:57 PM): footer width, natural 600:196 ratio */
+.footer-logo .pcw-logo-pic{display:block;line-height:0}
+.footer-logo img.pcw-logo-img--d2{width:230px!important;height:auto!important;max-width:100%}
+@media(max-width:767px){.footer-logo img.pcw-logo-img--d2{width:210px!important}}

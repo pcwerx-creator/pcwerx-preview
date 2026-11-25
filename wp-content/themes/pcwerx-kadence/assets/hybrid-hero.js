@@ -42,6 +42,8 @@
     function ease(v){return v*v*(3-2*v);}
     function measure(){
       mob=w.matchMedia('(max-width: 899px)').matches;
+      /* mobile pin is 520px+80vh (was 520px+110vh, Danny t210u): rescale so the zoom and handoff keep their px length and only the network hold gets shorter */
+      var vh=w.innerHeight||844, f=mob?Math.min(1.5,(520+1.1*vh)/(520+.8*vh)):1; Z1=0.42*f; H0=0.50*f; H1=Math.min(.95,0.72*f);
       var keep=fl.style.transform; fl.style.transform='none'; if(orb)orb.style.transform='';
       var sr=st.getBoundingClientRect(), fr=fl.getBoundingClientRect(), ir=inner.getBoundingClientRect(), hdr=parseFloat(getComputedStyle(root).getPropertyValue('--hdr'))||76;
       var px=fr.left-sr.left+.44*fr.width, py=fr.top-sr.top+.49*fr.height;

@@ -97,3 +97,22 @@ body.pcw-home-dark{
 .pcw-home-dark .pcw-beam{will-change:transform}
 .pcw-home-dark .pcw-hero.is-network .pcw-beam,.pcw-home-dark .pcw-hero.is-network .pcw-orbit,.pcw-home-dark .pcw-hero.is-network .pcw-grain{visibility:hidden}
 .pcw-home-dark .pcw-hero.is-network .pcw-grain{animation-play-state:paused}
+
+/* Danny t210u (Nov 25 1:01 PM): mobile "From one PC to your whole office" in about one swipe on a 390x844 phone.
+   The network art becomes a 42vh band at the top of the pinned stage, the copy starts right under it, padding trimmed,
+   and the network hold after the handoff is shorter (hybrid-hero.js keeps the zoom/handoff the same length in px). Desktop unchanged. */
+@media (max-width:899px){
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 520px + 80vh)}
+  .hybrid-net{bottom:auto;height:42vh}
+  .hybrid-net .poster img{object-position:50% 24%}
+  .hybrid-net::after{background:linear-gradient(180deg,#090b0e00 0,#090b0e00 64%,#090b0e 100%)}
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net{justify-content:flex-start;padding:calc(42vh - 22px) 20px 16px;
+    background:linear-gradient(180deg,rgba(9,11,14,0) 0,rgba(9,11,14,0) calc(42vh - 30px),#090b0e calc(42vh + 10px))}
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .pcw-eyebrow{margin-bottom:10px}
+  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .net-chips{margin-top:12px}
+  /* reduced-motion still band: same shape */
+  .net-fallback,.net-fallback .container{min-height:0}
+  .net-fallback .pcw-netbg{position:relative;height:42vh}
+  .net-fallback::after{background:linear-gradient(180deg,#090b0e00 0,#090b0e00 30vh,#090b0e 42vh)}
+  .net-fallback .container{justify-content:flex-start;padding-top:0;padding-bottom:28px;margin-top:-6px}
+}
