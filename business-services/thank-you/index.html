@@ -165,7 +165,7 @@
 .site-bottom-footer-inner-wrap{padding-top:30px;padding-bottom:30px;grid-column-gap:30px;}.site-bottom-footer-inner-wrap .widget{margin-bottom:30px;}.site-bottom-footer-inner-wrap .site-footer-section:not(:last-child):after{right:calc(-30px / 2);}
 /*# sourceURL=kadence-global-inline-css */
 </style>
-<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795625059' media='all' />
+<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795625973' media='all' />
 <link rel='stylesheet' id='kadence-content-css' href='/pcwerx-preview/wp-content/themes/kadence/assets/css/content.min.css?ver=1795542162' media='all' />
 <style id="pcw-inner-dark-inline-css">
 /* PC Werx inner pages, dark (mix home style). Danny, Nov 24 2026 ~9:45 PM ("Ok let's see it").
@@ -343,6 +343,17 @@ body.pcw-dark{
 .pcw-dark .pcw-contact-list dd a:hover,.pcw-dark .pcw-contact-list dd a:focus-visible{color:#E9C77B}
 @media (max-width:767px){.pcw-dark .pcw-contact-list{gap:12px;font-size:1.06rem}.pcw-dark .pcw-contact-list__row{grid-template-columns:1fr;gap:4px;padding-bottom:12px}.pcw-dark .pcw-contact-list dt{font-size:.74rem}}
 
+/* ---- Business IT section (Danny, Nov 25 11:55 AM): every picture still, flat and square. No tilt, perspective, bob, float or hover motion.
+   Danny picked B (Nov 25 11:59 AM): no box. The square still fades softly into the wallpaper (radial mask, no border). The last rule below overrides the card styling. */
+.pcw-dark.pcw-bizit .pcw-hero__stage{perspective:none!important;aspect-ratio:1/1;max-width:500px}
+.pcw-dark.pcw-bizit .pcw-hero .pcw-float{transform:none!important;animation:none!important;transition:none!important;inset:3%!important;transform-style:flat!important;will-change:auto!important;display:flex;align-items:center;justify-content:center}
+.pcw-dark.pcw-bizit .pcw-hero .pcw-float__img{animation:none!important;transform:none!important;transition:none!important;width:100%!important;height:auto!important;aspect-ratio:1/1!important;object-fit:cover!important;mix-blend-mode:normal!important;border-radius:20px;border:1px solid var(--hline-2);filter:none!important;box-shadow:0 24px 50px -18px rgba(0,0,0,.8),0 0 34px rgba(47,123,255,.18)}
+.pcw-dark.pcw-bizit .pcw-hero .pcw-float__shadow,.pcw-dark.pcw-bizit .pcw-hero .pcw-float__glow{display:none!important}
+.pcw-dark.pcw-bizit .pcw-sec .wp-block-image img,.pcw-dark.pcw-bizit .pcw-pic--photo img{aspect-ratio:1/1!important;width:100%!important;height:auto!important;object-fit:cover!important;transform:none!important;transition:none!important;animation:none!important;border-radius:18px;border:1px solid var(--hline-2);box-shadow:0 0 30px rgba(47,123,255,.14)}
+.pcw-dark.pcw-bizit .pcw-sec .wp-block-image img:hover,.pcw-dark.pcw-bizit .pcw-pic img:hover,.pcw-dark.pcw-bizit .pcw-float:hover{transform:none!important}
+.pcw-dark.pcw-bizit .pcw-pic img,.pcw-dark.pcw-bizit .pcw-diagram img{transform:none!important;animation:none!important}
+.pcw-dark.pcw-bizit .pcw-hero .pcw-float__img,.pcw-dark.pcw-bizit .pcw-sec .wp-block-image img,.pcw-dark.pcw-bizit .pcw-pic--photo img{border:0!important;border-radius:0!important;box-shadow:none!important;background:none!important;-webkit-mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.6) 78%,transparent 100%);mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.6) 78%,transparent 100%)}
+
 /*# sourceURL=pcw-inner-dark-inline-css */
 </style>
 <style id="kadence-blocks-global-variables-inline-css">
@@ -361,7 +372,7 @@ body.pcw-dark{
 <link rel="apple-touch-icon" href="/pcwerx-preview/wp-content/uploads/brand/site-icon-180.png?v=1795625115" />
 <meta name="msapplication-TileImage" content="/pcwerx-preview/wp-content/uploads/brand/site-icon-192.png?v=1795625115" />
 <style id="pcw-preview-static">.pcw-preview-off{margin:14px 0 0;padding:12px 14px;border:1px dashed #C6A15A;border-radius:10px;background:rgba(198,161,90,.08);color:#F3F6FA;font-size:15px}.pcw-preview-off a{color:#E2BC6A}</style></head>
-<body class="wp-singular page-template-default page page-id-60 page-child parent-pageid-47 wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-pcwerx-kadence pcw-newsite pcw-dark footer-on-bottom hide-focus-outline link-style-standard content-title-style-hide content-width-fullwidth content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"><a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+<body class="wp-singular page-template-default page page-id-60 page-child parent-pageid-47 wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-pcwerx-kadence pcw-newsite pcw-dark pcw-bizit footer-on-bottom hide-focus-outline link-style-standard content-title-style-hide content-width-fullwidth content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"><a class="skip-link screen-reader-text" href="#main">Skip to content</a>
 <div class="preview-ribbon">PRIVATE WORKING COPY · NOT LIVE</div>
 <div class="utility"><div class="container"><span class="u-since">Local expertise since 2006 <i></i> Hamilton and surrounding area</span><a href="mailto:support@pcwerx.ca">support@pcwerx.ca</a><ul class="pcw-social pcw-social--top"><li><a href="https://g.page/pcwerxx" target="_blank" rel="noopener" aria-label="PC Werx on Google Business Profile (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2a7.2 7.2 0 0 1-6.8-5H1.2v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.2 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.2a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8L20.1 3A12 12 0 0 0 1.2 6.6l4 3.1a7.2 7.2 0 0 1 6.8-4.9z"/></svg></a></li><li><a href="https://www.instagram.com/pcwerx" target="_blank" rel="noopener" aria-label="PC Werx on Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><defs><linearGradient id="pcwig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F58529"/><stop offset=".5" stop-color="#DD2A7B"/><stop offset="1" stop-color="#515BD4"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#pcwig)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1" fill="#fff"/></svg></a></li><li><a href="https://twitter.com/PCWerx" target="_blank" rel="noopener" aria-label="PC Werx on X (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="6" fill="#111"/><path fill="#fff" d="M13.3 10.8 18.6 5h-1.3l-4.6 5-3.6-5H5l5.5 7.8L5 19h1.3l4.8-5.3 3.9 5.3H19zm-1.7 1.9-.6-.8L6.7 6h1.9l3.6 5 .6.8 4.6 6.3h-1.9z"/></svg></a></li><li><a href="https://www.facebook.com/pcwerxx/" target="_blank" rel="noopener" aria-label="PC Werx on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="6" fill="#1877F2"/><path fill="#fff" d="M15.6 12.6h-2.3V20h-3v-7.4H8.8V10h1.5V8.3c0-2.2 1-3.3 3.4-3.3h2v2.6h-1.3c-.9 0-1.1.3-1.1 1V10h2.5z"/></svg></a></li><li><a href="https://www.youtube.com/@PCWerx" target="_blank" rel="noopener" aria-label="PC Werx on YouTube (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="6" fill="#FF0000"/><path fill="#fff" d="m10 8.5 6 3.5-6 3.5z"/></svg></a></li></ul></div></div>
 <header class="pcw-header"><div class="container header-inner">
@@ -428,7 +439,7 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 //# sourceURL=wp-i18n-js-after
 </script>
 <script id="pcw-cta-js" src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/cta.js?ver=1795558188"></script>
-<script id="pcw-motion-js" src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.js?ver=1795565873"></script>
+<script id="pcw-motion-js" src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.js?ver=1795625706"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/pcwerx-preview/wp-includes/js/wp-emoji-release.min.js?ver=7.1.5"}}
 </script>
