@@ -666,3 +666,20 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
  /* no desktop glow inside the mobile row (tap leaves :hover on touch screens) */
  .pcw-dark .pcw-nav>#menu-item-874>a,.pcw-home-dark .pcw-nav>#menu-item-874>a,.pcw-dark .pcw-nav>#menu-item-874:hover>a,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a,.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-home-dark .pcw-nav>#menu-item-874>a:focus-visible{box-shadow:none}
 }
+/* upload16: business pages' trust strip has 3 tiles (no 'Free diagnostics', Danny pt262u): 3 equal columns, stacked full-width rows on phones */
+.pcw-trust--3 ul{grid-template-columns:repeat(3,1fr)!important}
+.pcw-trust--3 li,.pcw-trust--3 li:nth-child(n){grid-column:auto!important;border-top:0!important;border-left:1px solid var(--line)}
+.pcw-trust--3 li:first-child{border-left:0!important}
+@media (max-width:767px){
+ .pcw-trust--3 ul{grid-template-columns:1fr!important}
+ .pcw-trust--3 li,.pcw-trust--3 li:nth-child(n){border-left:0!important;border-top:1px solid var(--line)!important;padding:14px 18px}
+ .pcw-trust--3 li:first-child{border-top:0!important}
+}
+/* upload16: network diagram v2 has labels baked in; the HTML label list stays for screen readers only */
+.pcw-diagram--baked .pcw-diagram__labels.pcw-sr{position:absolute!important;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap;inset:auto}
+/* upload16: About 'Why people choose us': 4 equal boxes in one row (desktop), 2x2 (tablet), 1 column (phones); text vertically centred, check aligned to the text */
+.pcw-why{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch}
+.pcw-why li{display:flex;align-items:center;gap:12px;min-height:72px;padding:14px 16px!important;line-height:1.3}
+.pcw-why li::before{position:static!important;flex:0 0 16px;transform:translateY(-3px) rotate(-45deg)!important}
+@media (max-width:1023px){.pcw-why{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:600px){.pcw-why{grid-template-columns:1fr!important}.pcw-why li{min-height:56px}}
