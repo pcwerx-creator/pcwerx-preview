@@ -177,7 +177,7 @@
 .site-bottom-footer-inner-wrap{padding-top:30px;padding-bottom:30px;grid-column-gap:30px;}.site-bottom-footer-inner-wrap .widget{margin-bottom:30px;}.site-bottom-footer-inner-wrap .site-footer-section:not(:last-child):after{right:calc(-30px / 2);}
 /*# sourceURL=kadence-global-inline-css */
 </style>
-<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795660258' media='all' />
+<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795708248' media='all' />
 <link rel='stylesheet' id='kadence-content-css' href='/pcwerx-preview/wp-content/themes/kadence/assets/css/content.min.css?ver=1795542162' media='all' />
 <style id="pcw-inner-dark-inline-css">
 /* PC Werx inner pages, dark (mix home style). Danny, Nov 24 2026 ~9:45 PM ("Ok let's see it").
@@ -391,6 +391,27 @@ body.pcw-dark{
 @media (max-width:390px){
  .pcw-dark .pcw-svc-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:9px;font-size:15px}
 }
+/* upload16: light section bands on dark inner pages, same class, tokens and rules as the homepage (home-dark.css 'pcw-intro-light').
+   Navy #0b1f3a on #f3f6fb 15.6:1, body #2a3f5c 10.2:1, links #0b4fa8 7.6:1 (all AA). */
+.pcw-dark{--tt-light:#f3f6fb;--tt-navy:#0b1f3a;--tt-navy-2:#2a3f5c}
+.pcw-dark .kb-row-layout-wrap.pcw-sec.pcw-intro-light.pcw-intro-light,.pcw-dark .kb-row-layout-wrap.pcw-sec.pcw-intro-light.pcw-intro-light:nth-of-type(n){--tt-bg:var(--tt-light);box-shadow:0 0 0 100vmax var(--tt-bg)!important;clip-path:inset(0 -100vmax)!important;background:var(--tt-bg)!important}
+.pcw-dark .kb-row-layout-wrap.pcw-sec.pcw-intro-light{border-top:0!important}
+.pcw-dark .pcw-intro-light,.pcw-dark .pcw-intro-light h2,.pcw-dark .pcw-intro-light h3,.pcw-dark .pcw-intro-light h4,.pcw-dark .pcw-intro-light p,.pcw-dark .pcw-intro-light li,.pcw-dark .pcw-intro-light strong,.pcw-dark .pcw-intro-light b{color:var(--tt-navy)!important}
+.pcw-dark .pcw-intro-light p,.pcw-dark .pcw-intro-light li{color:var(--tt-navy-2)!important}
+.pcw-dark .pcw-intro-light a:not(.wp-block-button__link):not(.rb){color:#0b4fa8!important}
+.pcw-dark .pcw-intro-light .wp-block-button__link{color:#fff!important}
+.pcw-dark .pcw-intro-light li::marker{color:#0b4fa8}
+.pcw-dark .pcw-intro-light .pcw-checks li::before{border-color:#0b4fa8!important}
+.pcw-dark .pcw-intro-light+.kb-row-layout-wrap.pcw-sec,.pcw-dark .pcw-intro-light+*+.kb-row-layout-wrap.pcw-sec{border-top:0!important}
+/* upload16: residential cloud backup row: both columns top-aligned, headings level, tight spacing, image neat under the copy */
+.pcw-dark .pcw-cloud>.kt-row-column-wrap{align-items:start!important}
+.pcw-dark .pcw-cloud .wp-block-kadence-column>.kt-inside-inner-col{justify-content:flex-start!important}
+.pcw-dark .pcw-cloud h2.wp-block-heading{margin-top:0}
+.pcw-dark .pcw-cloud h3.wp-block-heading{margin:.2em 0 .6em}
+.pcw-dark .pcw-cloud .wp-block-image{margin:18px 0 0}
+.pcw-dark .pcw-cloud .wp-block-image img{width:100%;max-width:560px;height:auto;border-radius:14px;display:block}
+/* upload16c: Business Focused strip removed; tighten cards block on /business-services/ */
+.pcw-dark .kb-row-layout-wrap.kb-row-layout-id_f70685.kb-row-layout-id_f70685{padding-top:8px!important;padding-bottom:8px!important;border-top:0!important}
 
 /*# sourceURL=pcw-inner-dark-inline-css */
 </style>
