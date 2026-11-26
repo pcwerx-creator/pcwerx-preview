@@ -3,6 +3,31 @@
   var d=document,root=d.documentElement,w=window; root.classList.add('pcw-js');
   var t=d.querySelector('.nav-toggle'),nav=d.getElementById('primary-nav');
   if(t&&nav){t.addEventListener('click',function(){var o=nav.classList.toggle('is-open');t.setAttribute('aria-expanded',o?'true':'false');});}
+  /* Mobile drawer accordion (Danny t247u, Nov 25 2026): submenus start collapsed; tapping the parent row or its chevron toggles it,
+     opening one closes the others. Desktop (>=1024px) hover dropdowns are untouched: the chevron button and the "All ..." item are mobile-only. */
+  var mq=w.matchMedia?w.matchMedia('(max-width: 1023px)'):null, rm=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches, subs=[];
+  function mobileNav(){return !!(mq&&mq.matches);}
+  function setSub(it,open){var ul=it.ul; if(it.btn.getAttribute('aria-expanded')===(open?'true':'false'))return;
+    it.btn.setAttribute('aria-expanded',open?'true':'false'); it.li.classList.toggle('is-sub-open',open);
+    if(rm||!mobileNav()){ul.style.height=open?'auto':'';return;}
+    var from=ul.getBoundingClientRect().height; ul.style.height=from+'px'; void ul.offsetHeight; ul.style.height=(open?ul.scrollHeight:0)+'px';}
+  function closeAll(except){subs.forEach(function(it){if(it!==except)setSub(it,false);});}
+  if(nav){Array.prototype.forEach.call(nav.querySelectorAll('.pcw-nav>li.menu-item-has-children'),function(li,i){
+    var a=li.querySelector(':scope>a'), ul=li.querySelector(':scope>.sub-menu'); if(!a||!ul)return;
+    var label=(a.textContent||'').trim(); if(!ul.id)ul.id='pcw-sub-'+(i+1);
+    var href=a.getAttribute('href')||''; if(href&&href!=='#'&&!ul.querySelector('.pcw-sub-all')){var all=d.createElement('li'); all.className='menu-item pcw-sub-all';
+      var al=d.createElement('a'); al.href=href; al.textContent='All '+label; if(li.classList.contains('current-menu-item'))al.setAttribute('aria-current','page'); all.appendChild(al); ul.insertBefore(all,ul.firstChild);}
+    var btn=d.createElement('button'); btn.type='button'; btn.className='pcw-sub-toggle'; btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-controls',ul.id);
+    btn.setAttribute('aria-label',label+' submenu'); btn.innerHTML='<span aria-hidden="true"></span>'; a.insertAdjacentElement('afterend',btn);
+    var it={li:li,a:a,ul:ul,btn:btn}; subs.push(it);
+    function toggle(e){ if(!mobileNav())return; e.preventDefault(); var open=btn.getAttribute('aria-expanded')!=='true'; if(open)closeAll(it); setSub(it,open); }
+    btn.addEventListener('click',toggle); a.addEventListener('click',toggle);
+    ul.addEventListener('transitionend',function(e){ if(e.target===ul&&e.propertyName==='height'&&btn.getAttribute('aria-expanded')==='true')ul.style.height='auto'; });
+  });
+  nav.classList.add('pcw-acc');
+  if(t)t.addEventListener('click',function(){ if(!nav.classList.contains('is-open'))subs.forEach(function(it){setSub(it,false);it.ul.style.height='';}); });
+  if(mq&&mq.addEventListener)mq.addEventListener('change',function(){subs.forEach(function(it){it.btn.setAttribute('aria-expanded','false');it.li.classList.remove('is-sub-open');it.ul.style.height='';});});
+  }
   var reduce=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce||!('IntersectionObserver' in w)) return;
   /* reveal: only elements fully below the fold at load get hidden, so above-fold content never flashes */

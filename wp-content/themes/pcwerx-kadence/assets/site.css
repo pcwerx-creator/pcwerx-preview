@@ -613,3 +613,29 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 /* Footer privacy link (Danny t227, Nov 25 2026) */
 .footer-bottom .footer-privacy{margin-left:12px;color:inherit;text-decoration:underline;text-underline-offset:3px}
 .footer-bottom .footer-privacy:hover,.footer-bottom .footer-privacy:focus-visible{color:#E2BC6A}
+/* Mobile drawer accordion (Danny t247u). Only inside the <=1023px drawer and only once site.js has set it up (.pcw-acc);
+   without JS the submenus stay listed open as before. Desktop dropdowns untouched. */
+.pcw-sub-toggle,.pcw-nav .pcw-sub-all{display:none}
+@media (max-width:1023px){
+ .pcw-acc .pcw-nav>li.menu-item-has-children{display:flex;flex-wrap:wrap;align-items:center}
+ .pcw-acc .pcw-nav>li.menu-item-has-children>a{flex:1 1 auto}
+ .pcw-acc .pcw-nav>li.menu-item-has-children>a::after{display:none}
+ .pcw-acc .pcw-sub-toggle{display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer}
+ .pcw-acc .pcw-sub-toggle span{display:block;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);opacity:.75;transition:transform .25s ease}
+ .pcw-acc .is-sub-open>.pcw-sub-toggle span{transform:translateY(2px) rotate(225deg)}
+ .pcw-acc .pcw-sub-toggle:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+ .pcw-acc .pcw-nav>li>.sub-menu{flex:0 0 100%;display:block;height:0;overflow:hidden;visibility:hidden;transition:height .28s ease,visibility 0s linear .28s}
+ .pcw-acc .pcw-nav>li.is-sub-open>.sub-menu{visibility:visible;transition:height .28s ease,visibility 0s}
+ .pcw-acc .pcw-nav .pcw-sub-all{display:block}
+ /* the open/highlighted parent row is one bar: link + chevron share the highlight edge to edge (Danny, 8:57 PM) */
+ .pcw-acc .pcw-nav>li.menu-item-has-children>.pcw-sub-toggle{align-self:stretch;height:auto;min-height:44px}
+ .pcw-acc .pcw-nav>li.menu-item-has-children:is(.is-sub-open,.current-menu-item,.current-menu-ancestor,:has(>a:hover),:has(>.pcw-sub-toggle:hover))>a{border-radius:8px 0 0 8px}
+ .pcw-acc .pcw-nav>li.menu-item-has-children:is(.is-sub-open,.current-menu-item,.current-menu-ancestor,:has(>a:hover),:has(>.pcw-sub-toggle:hover))>.pcw-sub-toggle{border-radius:0 8px 8px 0}
+ .pcw-acc .pcw-nav>li.menu-item-has-children:is(.is-sub-open,.current-menu-item,.current-menu-ancestor,:has(>a:hover),:has(>.pcw-sub-toggle:hover))>:is(a,.pcw-sub-toggle){background:var(--blue-soft)}
+ .pcw-dark .pcw-acc .pcw-nav>li.menu-item-has-children:is(.is-sub-open,.current-menu-item,.current-menu-ancestor,:has(>a:hover),:has(>.pcw-sub-toggle:hover))>:is(a,.pcw-sub-toggle),
+ .pcw-home-dark .pcw-acc .pcw-nav>li.menu-item-has-children:is(.is-sub-open,.current-menu-item,.current-menu-ancestor,:has(>a:hover),:has(>.pcw-sub-toggle:hover))>:is(a,.pcw-sub-toggle){background:rgba(47,123,255,.16)}
+}
+@media (max-width:1023px) and (prefers-reduced-motion:reduce){
+ .pcw-acc .pcw-nav>li>.sub-menu,.pcw-acc .pcw-sub-toggle span{transition:none}
+ .pcw-acc .pcw-nav>li.is-sub-open>.sub-menu{height:auto}
+}
