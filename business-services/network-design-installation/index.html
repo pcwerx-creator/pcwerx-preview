@@ -185,7 +185,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 .site-bottom-footer-inner-wrap{padding-top:30px;padding-bottom:30px;grid-column-gap:30px;}.site-bottom-footer-inner-wrap .widget{margin-bottom:30px;}.site-bottom-footer-inner-wrap .site-footer-section:not(:last-child):after{right:calc(-30px / 2);}
 /*# sourceURL=kadence-global-inline-css */
 </style>
-<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795660258' media='all' />
+<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795708248' media='all' />
 <link rel='stylesheet' id='kadence-content-css' href='/pcwerx-preview/wp-content/themes/kadence/assets/css/content.min.css?ver=1795542162' media='all' />
 <style id="pcw-inner-dark-inline-css">
 /* PC Werx inner pages, dark (mix home style). Danny, Nov 24 2026 ~9:45 PM ("Ok let's see it").
@@ -399,6 +399,27 @@ body.pcw-dark{
 @media (max-width:390px){
  .pcw-dark .pcw-svc-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:9px;font-size:15px}
 }
+/* upload16: light section bands on dark inner pages, same class, tokens and rules as the homepage (home-dark.css 'pcw-intro-light').
+   Navy #0b1f3a on #f3f6fb 15.6:1, body #2a3f5c 10.2:1, links #0b4fa8 7.6:1 (all AA). */
+.pcw-dark{--tt-light:#f3f6fb;--tt-navy:#0b1f3a;--tt-navy-2:#2a3f5c}
+.pcw-dark .kb-row-layout-wrap.pcw-sec.pcw-intro-light.pcw-intro-light,.pcw-dark .kb-row-layout-wrap.pcw-sec.pcw-intro-light.pcw-intro-light:nth-of-type(n){--tt-bg:var(--tt-light);box-shadow:0 0 0 100vmax var(--tt-bg)!important;clip-path:inset(0 -100vmax)!important;background:var(--tt-bg)!important}
+.pcw-dark .kb-row-layout-wrap.pcw-sec.pcw-intro-light{border-top:0!important}
+.pcw-dark .pcw-intro-light,.pcw-dark .pcw-intro-light h2,.pcw-dark .pcw-intro-light h3,.pcw-dark .pcw-intro-light h4,.pcw-dark .pcw-intro-light p,.pcw-dark .pcw-intro-light li,.pcw-dark .pcw-intro-light strong,.pcw-dark .pcw-intro-light b{color:var(--tt-navy)!important}
+.pcw-dark .pcw-intro-light p,.pcw-dark .pcw-intro-light li{color:var(--tt-navy-2)!important}
+.pcw-dark .pcw-intro-light a:not(.wp-block-button__link):not(.rb){color:#0b4fa8!important}
+.pcw-dark .pcw-intro-light .wp-block-button__link{color:#fff!important}
+.pcw-dark .pcw-intro-light li::marker{color:#0b4fa8}
+.pcw-dark .pcw-intro-light .pcw-checks li::before{border-color:#0b4fa8!important}
+.pcw-dark .pcw-intro-light+.kb-row-layout-wrap.pcw-sec,.pcw-dark .pcw-intro-light+*+.kb-row-layout-wrap.pcw-sec{border-top:0!important}
+/* upload16: residential cloud backup row: both columns top-aligned, headings level, tight spacing, image neat under the copy */
+.pcw-dark .pcw-cloud>.kt-row-column-wrap{align-items:start!important}
+.pcw-dark .pcw-cloud .wp-block-kadence-column>.kt-inside-inner-col{justify-content:flex-start!important}
+.pcw-dark .pcw-cloud h2.wp-block-heading{margin-top:0}
+.pcw-dark .pcw-cloud h3.wp-block-heading{margin:.2em 0 .6em}
+.pcw-dark .pcw-cloud .wp-block-image{margin:18px 0 0}
+.pcw-dark .pcw-cloud .wp-block-image img{width:100%;max-width:560px;height:auto;border-radius:14px;display:block}
+/* upload16c: Business Focused strip removed; tighten cards block on /business-services/ */
+.pcw-dark .kb-row-layout-wrap.kb-row-layout-id_f70685.kb-row-layout-id_f70685{padding-top:8px!important;padding-bottom:8px!important;border-top:0!important}
 
 /*# sourceURL=pcw-inner-dark-inline-css */
 </style>
@@ -536,7 +557,7 @@ body.pcw-dark{
 
 <p class="wp-block-paragraph">We monitor the network, keep firmware and security updates current and fix problems, often remotely before anyone notices. Pair it with <a href="/pcwerx-preview/business-services/managed-it/">managed IT</a> for one team looking after everything.</p>
 
-<figure class="pcw-pic pcw-pic--wifi"><picture><source media="(max-width: 699px)" srcset="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-wifi-sq-720.webp?v=1795618555 720w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-wifi-sq-1080.webp?v=1795618555 1080w" sizes="100vw" width="1080" height="1080"><img src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-wifi-800.webp?v=1795618555" srcset="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-wifi-800.webp?v=1795618555 800w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-wifi-1600.webp?v=1795618555 1600w" sizes="(max-width: 1240px) 100vw, 1100px" width="1600" height="1000" alt="Business Wi-Fi setup by PC Werx in Hamilton: internet, firewall and router, managed switch and a ceiling Wi-Fi access point" loading="lazy" decoding="async"></picture></figure>
+<figure class="pcw-diagram pcw-diagram--network pcw-diagram--baked"><div class="pcw-diagram__frame"><picture><source media="(max-width: 600px)" type="image/webp" srcset="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-mobile-600.webp?v=1795708840 600w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-mobile-1080.webp?v=1795708840 1080w" sizes="100vw" width="1080" height="1350"><source media="(max-width: 600px)" srcset="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-mobile-1080.jpg?v=1795708840" width="1080" height="1350"><source type="image/webp" srcset="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-800.webp?v=1795708839 800w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-1200.webp?v=1795708840 1200w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-1600.webp?v=1795708840 1600w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-2400.webp?v=1795708840 2400w" sizes="(max-width: 1240px) 100vw, 1200px" width="1600" height="1000"><img src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/dia-network-v3-1200.jpg?v=1795708840" width="1600" height="1000" alt="Business network diagram: internet, firewall, managed switching, Wi-Fi, MacBook, iPhone, desktop PC, security cameras, VoIP phones, door access, servers and backup" loading="lazy" decoding="async"></picture><ul class="pcw-diagram__labels pcw-sr" aria-label="Parts of a business network"><li>Internet</li><li>Firewall &amp; Router</li><li>Managed Switching</li><li>Wi-Fi</li><li>MacBook</li><li>iPhone</li><li>Security Cameras</li><li>VoIP Phones</li><li>Door Access</li><li>Desktop PC</li><li>Servers &amp; Backup</li></ul></div><figcaption>One plan for the whole office: internet, firewall, switching, Wi-Fi, cameras, phones, door access, servers and backup.</figcaption></figure>
 
 
 <h2 class="wp-block-heading">Related business IT services</h2>
