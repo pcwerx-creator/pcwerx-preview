@@ -185,7 +185,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 .site-bottom-footer-inner-wrap{padding-top:30px;padding-bottom:30px;grid-column-gap:30px;}.site-bottom-footer-inner-wrap .widget{margin-bottom:30px;}.site-bottom-footer-inner-wrap .site-footer-section:not(:last-child):after{right:calc(-30px / 2);}
 /*# sourceURL=kadence-global-inline-css */
 </style>
-<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795634947' media='all' />
+<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795659158' media='all' />
 <link rel='stylesheet' id='kadence-content-css' href='/pcwerx-preview/wp-content/themes/kadence/assets/css/content.min.css?ver=1795542162' media='all' />
 <style id="pcw-inner-dark-inline-css">
 /* PC Werx inner pages, dark (mix home style). Danny, Nov 24 2026 ~9:45 PM ("Ok let's see it").
@@ -380,6 +380,26 @@ body.pcw-dark{
 .pcw-dark .pcw-hero .pcw-float--pick-contact .pcw-float__shadow,.pcw-dark .pcw-hero .pcw-float--pick-contact .pcw-float__glow{display:none!important}
 @media (max-width:899px){.pcw-dark .pcw-hero--still .pcw-hero__stage:has(.pcw-float--pick-contact){display:block!important;max-width:300px;order:0;margin:-6px auto -10px}}
 
+/* ---- VoIP hero (Danny t249u, Nov 25 2026 8:56 PM): the whole Touch Max phone on the site's dark background.
+   No square crop, no round spotlight mask, no glow/shadow plate. The art is Pixel's voip-v2-transparent cut-out (pix2-voip-*.webp). */
+.pcw-dark.pcw-bizit .pcw-hero .pcw-float.pcw-float--voip .pcw-float__img{aspect-ratio:auto!important;height:auto!important;width:100%!important;object-fit:contain!important;-webkit-mask-image:none!important;mask-image:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:none!important;background:none!important}
+.pcw-dark .pcw-hero__stage:has(.pcw-float--voip) .pcw-glow,.pcw-dark .pcw-hero__stage:has(.pcw-float--voip) .pcw-float__shadow{display:none!important}
+
+/* upload14: residential services list as one card, two even columns (11 / 10), no tall half-empty boxes */
+.pcw-dark .pcw-svc-card{background:#0F1318;border:1px solid var(--hline);border-radius:var(--r,16px);padding:26px 30px;margin:18px 0 0}
+.pcw-dark .pcw-svc-list{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(11,auto);grid-auto-flow:column;gap:10px 36px;margin:0;padding:0}
+.pcw-dark .pcw-svc-list li{margin:0;line-height:1.4}
+@media (max-width:767px){
+ .pcw-dark .pcw-svc-card{padding:18px 14px}
+ .pcw-dark .pcw-svc-list{gap:9px 12px;font-size:14px}
+ .pcw-dark .pcw-svc-list li{padding-left:22px}
+ .pcw-dark .pcw-svc-list li::before{width:11px;height:6px}
+}
+/* upload14 final: residential list single column at 390px and below so items don't wrap to 3-4 lines; two columns above */
+@media (max-width:390px){
+ .pcw-dark .pcw-svc-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:9px;font-size:15px}
+}
+
 /*# sourceURL=pcw-inner-dark-inline-css */
 </style>
 <style id="kadence-blocks-global-variables-inline-css">
@@ -549,7 +569,7 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 //# sourceURL=wp-i18n-js-after
 </script>
 <script id="pcw-cta-js" src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/cta.js?ver=1795558188"></script>
-<script id="pcw-motion-js" src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.js?ver=1795629983"></script>
+<script id="pcw-motion-js" src="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.js?ver=1795657857"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/pcwerx-preview/wp-includes/js/wp-emoji-release.min.js?ver=7.1.5"}}
 </script>
