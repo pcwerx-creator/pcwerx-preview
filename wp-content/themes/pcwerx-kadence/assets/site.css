@@ -639,3 +639,30 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
  .pcw-acc .pcw-nav>li>.sub-menu,.pcw-acc .pcw-sub-toggle span{transition:none}
  .pcw-acc .pcw-nav>li.is-sub-open>.sub-menu{height:auto}
 }
+/* upload15: Business IT header item = option A gold outline pill (Danny, mockups/bizit-button/css/option-a.css).
+   Text: #8C6914 on light pages (AA 5.07), #E2BC6A on dark headers (AA 11.2). On a business page: gold fill, navy #071D3A (AA 6.94).
+   Mobile: first row of the drawer, full-width gold outline around the row (chevron inside). Submenu links untouched. */
+.pcw-nav>#menu-item-874{--bz-text:#8C6914;--bz-gold:#C6A15A}
+.pcw-dark .pcw-nav>#menu-item-874,.pcw-home-dark .pcw-nav>#menu-item-874{--bz-text:#E2BC6A}
+.pcw-nav>#menu-item-874>a{border:1.5px solid var(--bz-gold);border-radius:999px;padding:8px 16px;margin:0 2px;background:transparent;color:var(--bz-text);box-sizing:border-box;transition:color .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
+.pcw-nav>#menu-item-874>a:hover,.pcw-nav>#menu-item-874>a:focus-visible,.pcw-nav>#menu-item-874:hover>a{background:transparent;color:var(--bz-text);border-color:var(--bz-gold);box-shadow:0 0 0 1px rgba(198,161,90,.35),0 0 18px rgba(198,161,90,.55)}
+.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-dark .pcw-nav>#menu-item-874:hover>a,
+.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a{box-shadow:0 0 0 1px rgba(226,188,106,.28),0 0 20px rgba(198,161,90,.65)}
+.pcw-nav>#menu-item-874.current-menu-item>a,.pcw-nav>#menu-item-874.current-menu-ancestor>a,
+.pcw-nav>#menu-item-874.current-menu-item:hover>a,.pcw-nav>#menu-item-874.current-menu-ancestor:hover>a{background:linear-gradient(180deg,#D6B574,#C6A15A);border-color:var(--bz-gold);color:#071D3A;box-shadow:none}
+.pcw-nav>#menu-item-874.current-menu-item>a:hover,.pcw-nav>#menu-item-874.current-menu-ancestor>a:hover{background:#E0C17F;color:#071D3A;box-shadow:0 0 18px rgba(198,161,90,.55)}
+.pcw-nav>#menu-item-874>a::after{border-color:currentColor}
+@media (max-width:1023px){
+ .pcw-nav>#menu-item-874{order:-1;display:flex;flex-wrap:wrap;align-items:center;margin:4px 0 10px;border:1.5px solid var(--bz-gold);border-radius:14px;box-sizing:border-box;overflow:hidden}
+ .pcw-nav>#menu-item-874>a,.pcw-nav>#menu-item-874>a:hover,.pcw-nav>#menu-item-874:hover>a,.pcw-nav>#menu-item-874>a:focus-visible{flex:1 1 auto;margin:0;padding:12px 14px;border:0;border-radius:0;background:transparent;box-shadow:none;color:var(--bz-text);white-space:normal}
+ .pcw-acc .pcw-nav>#menu-item-874>.pcw-sub-toggle{color:var(--bz-text);border-radius:0;background:transparent}
+ /* open or tapped: soft gold tint across the whole row (link + chevron) */
+ .pcw-acc .pcw-nav>#menu-item-874.is-sub-open>a,.pcw-acc .pcw-nav>#menu-item-874.is-sub-open>.pcw-sub-toggle,
+ .pcw-acc .pcw-nav>#menu-item-874:has(>a:hover)>:is(a,.pcw-sub-toggle){background:rgba(198,161,90,.14);border-radius:0}
+ /* on a business page: the row fills gold with navy text and chevron, like the desktop pill */
+ .pcw-nav>#menu-item-874.current-menu-item>a,.pcw-nav>#menu-item-874.current-menu-ancestor>a,
+ .pcw-acc .pcw-nav>#menu-item-874:is(.current-menu-item,.current-menu-ancestor)>:is(a,.pcw-sub-toggle){background:linear-gradient(180deg,#D6B574,#C6A15A);color:#071D3A;border-radius:0}
+ .pcw-nav>#menu-item-874>.sub-menu{background:transparent}
+ /* no desktop glow inside the mobile row (tap leaves :hover on touch screens) */
+ .pcw-dark .pcw-nav>#menu-item-874>a,.pcw-home-dark .pcw-nav>#menu-item-874>a,.pcw-dark .pcw-nav>#menu-item-874:hover>a,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a,.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-home-dark .pcw-nav>#menu-item-874>a:focus-visible{box-shadow:none}
+}
