@@ -39,6 +39,7 @@
   if(hero.classList.contains('is-zoom')) return; /* dark home: pinned zoom lives in home-hero.js */
   var obj=hero.querySelector('.pcw-float'); if(!obj) return;
   if(d.body.classList.contains('pcw-bizit')||obj.classList.contains('pcw-float--pick-contact')) return; /* Business IT and the contact picture stay still and flat (Danny, Nov 25; contact t209u) */ /* Business IT: pictures stay still and flat (Danny, Nov 25) */
+  if(hero.getAttribute('data-motion')==='flat') return; /* upload21 (Danny t353u): straight, static still on the area/residential pages */
   var mode=hero.getAttribute('data-motion'), mobile=w.matchMedia('(max-width: 899px)').matches;
   var dark=d.body.classList.contains('pcw-home-dark')||d.body.classList.contains('pcw-home-light'), push=mode==='pushin'&&!mobile, lite=mode==='pushin'&&mobile&&dark, stage=hero.querySelector('.pcw-hero__stage');
   if(lite) hero.classList.add('is-lite');

@@ -106,19 +106,19 @@ html[data-theme=light] body.pcw-light .pcw-reviews a.rb,html[data-theme=light] b
 }
 html[data-theme=light] body.pcw-light .pcw-hero__inner::before{transition:opacity .35s}
 /* zoomed interior / Business IT network states: the copy sits over the dark render panel, so it keeps the dark scrim + white copy */
-html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__inner::before,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.72) 50%,rgba(5,6,7,0) 100%)!important}
-html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__next-title,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__next-title{color:#fff!important;text-shadow:0 2px 18px rgba(0,0,0,.85)!important}
-html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed :is(.pcw-hero__next,.pcw-hero__next p),html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) :is(.pcw-hero__next,.pcw-hero__next p){color:#D6E2F0!important;text-shadow:0 1px 10px rgba(0,0,0,.9)!important}
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.72) 50%,rgba(5,6,7,0) 100%)!important}
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__next-title{color:#fff!important;text-shadow:0 2px 18px rgba(0,0,0,.85)!important}
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) :is(.pcw-hero__next,.pcw-hero__next p){color:#D6E2F0!important;text-shadow:0 1px 10px rgba(0,0,0,.9)!important}
 @media (max-width:767px){
- html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__inner::before,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(180deg,rgba(5,6,7,.30) 0%,rgba(5,6,7,.55) 30%,rgba(5,6,7,.78) 58%,rgba(5,6,7,0) 100%)!important}
- html[data-theme=light] body.pcw-light .pcw-hero.is-zoom.is-zoomed .pcw-hero__next,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero.is-zoom:is(.is-network,.is-handoff) .pcw-hero__next{background:linear-gradient(0deg,rgba(5,6,7,.94) 0,rgba(5,6,7,.82) 30%,rgba(5,6,7,0) 52%)!important}
+ html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(180deg,rgba(5,6,7,.30) 0%,rgba(5,6,7,.55) 30%,rgba(5,6,7,.78) 58%,rgba(5,6,7,0) 100%)!important}
+ html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero.is-zoom:is(.is-network,.is-handoff) .pcw-hero__next{background:linear-gradient(0deg,rgba(5,6,7,.94) 0,rgba(5,6,7,.82) 30%,rgba(5,6,7,0) 52%)!important}
 }
 @media (min-width:768px){ html[data-theme=light] body.pcw-home-light:not(.pcw-has-light-hero) .pcw-float--desktop-dark .pcw-float__img{position:relative;z-index:1}
  html[data-theme=light] body.pcw-home-light:not(.pcw-has-light-hero) .pcw-float--desktop-dark::before{z-index:0} }
 html[data-theme=light] body.pcw-light .pcw-hero__bg{transition:background-color .35s}
-html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff){background:#050607!important}
-html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__bg,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__bg{background:radial-gradient(640px 420px at 72% 46%,rgba(47,123,255,.20),transparent 70%),linear-gradient(180deg,#050607,#0B0D0E)!important}
-html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-grid-bg,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-grid-bg{opacity:.4}
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff){background:#050607!important}
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__bg{background:radial-gradient(640px 420px at 72% 46%,rgba(47,123,255,.20),transparent 70%),linear-gradient(180deg,#050607,#0B0D0E)!important}
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-grid-bg{opacity:.4}
 
 /* light hero art delivered (pcw-has-light-hero / pcw-has-light-hub set by plugins/pcwerx-site/light-hero.php only when the -light file exists and loads) */
 html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.hybrid-net,.net-fallback){background:#EEF3FA!important}
@@ -139,3 +139,49 @@ html[data-theme=light] body.pcw-light.pcw-has-light-hub .hybrid-net .poster{opac
  html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.hybrid-net,.net-fallback)::after{background:linear-gradient(180deg,rgba(238,243,250,0) 0,rgba(238,243,250,0) 70%,rgba(238,243,250,.92) 100%)!important}
  html[data-theme=light] body.pcw-light.pcw-has-light-hub .pcw-hero.is-zoom .pcw-hero__net{background:linear-gradient(0deg,rgba(238,243,250,.92) 0,rgba(238,243,250,.75) 34%,rgba(238,243,250,0) 54%)!important}
  html[data-theme=light] body.pcw-light.pcw-has-light-hub .hybrid-net .poster img{object-position:50% 36%!important} /* hub-390-light focal point sits lower than the dark hub-390; crop only, art untouched */}
+/* ===== upload21: light home hero readability (t349u/t350u) and light zoomed interior section (t348u). Dark mode untouched (all rules are light-scoped). ===== */
+/* text sits above the PC */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__inner{z-index:3}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__copy{z-index:2} /* stays sticky */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__next{z-index:2}
+/* eyebrow: darker solid gold on a soft light backing */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-eyebrow,html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-eyebrow span{color:#6B5010!important;opacity:1!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-eyebrow{width:fit-content;background:rgba(255,255,255,.78);padding:3px 9px;margin-left:-9px;border-radius:6px;box-shadow:0 1px 0 rgba(11,31,58,.06)}
+/* H1 sub-line, intro and stats: solid, full opacity */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero h1 .pcw-h1-sub,html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero h1 .pcw-h1-sub *{color:#6B5010!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero :is(.pcw-lede,.pcw-lede strong){color:#0B1F3A!important;opacity:1!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-proof li{color:#1E2F45!important;opacity:1!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-proof li b{color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-proof li+li{border-color:rgba(11,31,58,.18)!important}
+/* soft light scrim behind the copy block */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__copy::before{content:"";position:absolute;inset:-28px -40px -28px -48px;z-index:-1;pointer-events:none;border-radius:28px;background:radial-gradient(closest-side,rgba(246,248,251,.82),rgba(246,248,251,.55) 70%,rgba(246,248,251,0))}
+/* phone bubbles on every page (hero/service .pcw-call, info chips li>.pcw-tel (inline .pcw-tel in paragraphs stays a link), CTA bands .pcw-cta__phone, footer .footer-call): solid brand blue, white text/icon; ring/morph/shine animations kept. Inline text links stay links. */
+html[data-theme=light] body.pcw-light.pcw-light :is(a.pcw-call,li>a.pcw-tel,a.pcw-cta__phone,a.footer-call){background:#0B3A73!important;border-color:#0B3A73!important;color:#fff!important;text-shadow:none!important;box-shadow:0 8px 22px -10px rgba(11,58,115,.6)!important}
+html[data-theme=light] body.pcw-light.pcw-light :is(a.pcw-call,li>a.pcw-tel,a.pcw-cta__phone,a.footer-call) *{color:#fff!important}
+html[data-theme=light] body.pcw-light.pcw-light :is(a.pcw-call,li>a.pcw-tel,a.pcw-cta__phone,a.footer-call) svg{stroke:currentColor}
+html[data-theme=light] body.pcw-light.pcw-light :is(a.pcw-call,li>a.pcw-tel,a.pcw-cta__phone,a.footer-call):is(:hover,:focus-visible){background:#0E4C8A!important;border-color:#0E4C8A!important;box-shadow:0 0 24px -6px rgba(31,95,204,.65)!important}
+/* PC render: faint background art with a soft edge fade (desktop + mobile) */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-float__img{opacity:.45;transition:opacity .45s ease;-webkit-mask-image:radial-gradient(ellipse 58% 62% at 50% 52%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 58% 62% at 50% 52%,#000 58%,transparent 100%)}
+/* zoomed interior (Expert repair, inside and out): light section; dark interior art blended in with a soft mask until Pixel's -light interior lands (pcw-has-light-zoom) */
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero.is-zoomed .pcw-float__img{opacity:.2}
+html[data-theme=light] body.pcw-light.pcw-home-light:not(.pcw-has-light-zoom) .pcw-hero .pcw-zoomcrop__img{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 52%,transparent 100%)}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__next-title{color:#0B1F3A!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero :is(.pcw-hero__next,.pcw-hero__next p:not(.pcw-eyebrow):not(.pcw-hero__next-title)){color:#1E2F45!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__next::before{content:"";position:absolute;inset:-28px -40px -28px -48px;z-index:-1;pointer-events:none;border-radius:28px;background:radial-gradient(closest-side,rgba(246,248,251,.86),rgba(246,248,251,.6) 70%,rgba(246,248,251,0))}
+@media (max-width:899px){html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero.is-zoom:not(.is-network):not(.is-handoff) .pcw-hero__next{background:linear-gradient(0deg,rgba(243,246,251,.97) 0,rgba(243,246,251,.88) 40%,rgba(243,246,251,0) 66%)!important}
+ html[data-theme=light] body.pcw-light.pcw-home-light .pcw-hero .pcw-hero__next::before{display:none}}
+/* upload21 (Danny t351u): grey phone chip (e.g. Contact '905-572-9379') turns into the blue phone bubble */
+html[data-theme=light] body.pcw-light.pcw-light .pcw-chips li:has(>a[href^="tel:"]){background:#0B3A73!important;border-color:#0B3A73!important;box-shadow:0 8px 22px -10px rgba(11,58,115,.6)!important}
+html[data-theme=light] body.pcw-light.pcw-light .pcw-chips li:has(>a[href^="tel:"]) a{color:#fff!important;text-decoration-color:rgba(255,255,255,.5)!important}
+html[data-theme=light] body.pcw-light.pcw-light .pcw-chips li:has(>a[href^="tel:"]):hover{background:#0E4C8A!important}
+/* upload21 (Danny t352u): inner heroes (Business IT, About, Contact) on light: no dark circular vignette. Light art (pcw-has-light-pick) sits on the page with only a soft edge */
+html[data-theme=light] body.pcw-light.pcw-has-light-pick .pcw-hero :is(.pcw-float--pick-hub,.pcw-float--pick-pc) .pcw-float__img{background:none!important;box-shadow:none!important;-webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)!important;mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)!important;mix-blend-mode:normal!important;opacity:1!important}
+html[data-theme=light] body.pcw-light:is(.pcw-inner-light) .pcw-hero .pcw-float--pick .pcw-float__shadow{display:none!important}
+/* Contact hero: no light art yet -> CSS-only inversion of the dark glass art (file untouched) so it sits on light with no dark ring; Pixel's hero-pick-contact-*-light.webp replaces it via the swap hook */
+html[data-theme=light] body.pcw-light:not(.pcw-has-light-pick) .pcw-hero .pcw-float--pick-contact .pcw-float__img{filter:invert(1) hue-rotate(180deg) saturate(1.1)!important;background:none!important;box-shadow:none!important;-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent 100%)!important;mask-image:radial-gradient(closest-side,#000 70%,transparent 100%)!important}
+html[data-theme=light] body.pcw-light.pcw-has-light-pick .pcw-hero .pcw-float--pick-contact .pcw-float__img{background:none!important;box-shadow:none!important;-webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)!important;mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)!important}
+/* upload21 light contrast sweep: gold text that sat just under WCAG AA 4.5:1 on light */
+html[data-theme=light] body.pcw-light .pcw-trust .pcw-trust__g span,html[data-theme=light] body.pcw-light .pcw-trust__g>span,html[data-theme=light] body.pcw-light .pcw-trust__go{color:#7A5A0C!important}
+html[data-theme=light] body.pcw-light .pcw-cta .pcw-eyebrow,html[data-theme=light] body.pcw-light .pcw-cta .pcw-eyebrow span{color:#6B5010!important}
+html[data-theme=light] body.pcw-light .pcw-footer .pcw-eyebrow,html[data-theme=light] body.pcw-light .pcw-footer .pcw-eyebrow *{color:#1F5FCC!important}
+html[data-theme=light] body.pcw-light .pcw-header .pcw-brand > span{color:#6B5010!important} /* logo tagline: 4.0 -> 6.9:1 on light */
