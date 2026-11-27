@@ -28,6 +28,16 @@
   if(t)t.addEventListener('click',function(){ if(!nav.classList.contains('is-open'))subs.forEach(function(it){setSub(it,false);it.ul.style.height='';}); });
   if(mq&&mq.addEventListener)mq.addEventListener('change',function(){subs.forEach(function(it){it.btn.setAttribute('aria-expanded','false');it.li.classList.remove('is-sub-open');it.ul.style.height='';});});
   }
+  /* upload27 (Danny t386u-t392u): every collapsible starts closed, on first load and when a page comes back from the back/forward cache:
+     FAQ accordions, the mobile drawer and its submenus, and desktop dropdowns (focus left inside a dropdown would keep it open via :focus-within).
+     The current-page highlight inside a submenu is untouched and shows once the user opens it. */
+  function resetCollapsibles(){
+    Array.prototype.forEach.call(d.querySelectorAll('details[open]'),function(x){x.open=false;});
+    if(nav){ nav.classList.remove('is-open'); if(t)t.setAttribute('aria-expanded','false');
+      subs.forEach(function(it){it.btn.setAttribute('aria-expanded','false');it.li.classList.remove('is-sub-open');it.ul.style.height='';});
+      var ae=d.activeElement; if(ae&&ae!==d.body&&nav.contains(ae)&&ae.blur)ae.blur(); }
+  }
+  resetCollapsibles(); w.addEventListener('pageshow',function(e){ if(e.persisted)resetCollapsibles(); });
   var reduce=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce||!('IntersectionObserver' in w)) return;
   /* reveal: only elements fully below the fold at load get hidden, so above-fold content never flashes */
