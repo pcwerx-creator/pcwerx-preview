@@ -698,3 +698,30 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 @media(max-width:767px){.pcw-footer{padding-top:44px}.pcw-footer .footer-grid{grid-template-columns:1fr;gap:28px}.pcw-footer .footer-grid>div:last-child{min-width:0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}}
 /* upload18 (t322u): CTA phone digits on their own line under the bold 905-5PC-WERX */
 .pcw-cta__phone small{display:block;margin-top:6px;line-height:1.2;white-space:nowrap;letter-spacing:.02em}
+
+/* upload19: footer Quick links (Danny t338u/t339u/t340u) */
+.pcw-footer .footer-grid{grid-template-columns:auto auto auto;justify-content:space-between;gap:40px 56px;align-items:start}
+.pcw-footer .footer-grid>div:last-child{min-width:0}
+.pcw-footer .footer-brand{max-width:340px}
+.pcw-footer .footer-visit{min-width:240px}
+.pcw-footer .footer-links{justify-self:auto}
+.pcw-footer .footer-links ul{list-style:none;margin:0;padding:0;columns:2;column-gap:40px}
+.pcw-footer .footer-links li{break-inside:avoid;margin:0}
+.pcw-footer .footer-links a{display:flex;align-items:center;min-height:40px;margin:0;line-height:1.25;padding:2px 0}
+.pcw-footer .footer-links h2,.pcw-footer .footer-visit h2{margin-top:0}
+@media(max-width:1023px) and (min-width:768px){.pcw-footer .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);justify-content:stretch;grid-template-areas:"brand brand" "links visit"}
+ .pcw-footer .footer-brand{grid-area:brand}.pcw-footer .footer-links{grid-area:links;justify-self:start}.pcw-footer .footer-visit{grid-area:visit;justify-self:start;min-width:0}}
+@media(max-width:767px){
+ .pcw-footer .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);justify-content:stretch;grid-template-areas:"brand brand" "visit links";gap:28px 20px}
+ .pcw-footer .footer-brand{grid-area:brand}
+ .pcw-footer .footer-visit{grid-area:visit;justify-self:stretch;min-width:0}
+ .pcw-footer .footer-links{grid-area:links;justify-self:stretch}
+ .pcw-footer .footer-grid>.footer-visit,.pcw-footer .footer-grid>.footer-links{padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+ .pcw-footer .footer-links ul{columns:1}
+ .pcw-footer .footer-links a{min-height:40px}
+}
+@media(max-width:360px){
+ .pcw-footer .footer-grid{grid-template-columns:1fr;grid-template-areas:"brand" "visit" "links"}
+ .pcw-footer .footer-grid>.footer-links{padding-left:12px}
+}
+@media(max-width:767px){.pcw-footer .footer-visit .pcw-hours{grid-template-columns:1fr;row-gap:.15em}}

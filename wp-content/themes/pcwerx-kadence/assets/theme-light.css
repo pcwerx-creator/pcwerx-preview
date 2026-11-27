@@ -23,3 +23,113 @@ body.pcw-light .pcw-shimmer{background:linear-gradient(100deg,#0B1F3A 0%,#0B1F3A
 body.pcw-light .pcw-cta .pcw-eyebrow,body.pcw-light .pcw-cta .pcw-eyebrow span{color:#8C6914}
 body.pcw-light .pcw-trust .pcw-trust__g span,body.pcw-light .pcw-trust__g>span{color:#9A6F0B}
 body.pcw-light .pcw-awards .pcw-eyebrow,body.pcw-light .pcw-awards-wrap .pcw-eyebrow{color:#E2BC6A}
+
+/* upload19 (Danny t331u): toggle hover / focus-visible animation. Sun: rays rotate + pulse. Moon: gentle tilt + two stars twinkle. Soft glow. Reduced motion: no movement. */
+.pcw-theme-toggle{transition:background-color .2s,border-color .2s,color .2s,box-shadow .3s}
+.pcw-theme-toggle svg{transform-origin:50% 50%;transform-box:fill-box}
+.pcw-theme-toggle .pcw-tt-star{opacity:0;transform-origin:center;transform-box:fill-box}
+.pcw-theme-toggle:is(:hover,:focus-visible){box-shadow:0 0 0 1px rgba(226,188,106,.35),0 0 16px 2px rgba(226,188,106,.38)}
+.pcw-theme-toggle:is(:hover,:focus-visible) .pcw-tt-sun{color:#F2CD78;filter:drop-shadow(0 0 4px rgba(242,205,120,.75));animation:pcw-tt-spin 4.8s linear infinite,pcw-tt-pulse 1.6s ease-in-out infinite}
+.pcw-theme-toggle:is(:hover,:focus-visible) .pcw-tt-moon{filter:drop-shadow(0 0 4px rgba(120,160,255,.6));animation:pcw-tt-tilt 2.4s ease-in-out infinite}
+.pcw-theme-toggle:is(:hover,:focus-visible) .pcw-tt-star1{animation:pcw-tt-twinkle 1.6s ease-in-out infinite}
+.pcw-theme-toggle:is(:hover,:focus-visible) .pcw-tt-star2{animation:pcw-tt-twinkle 1.6s ease-in-out .8s infinite}
+html[data-theme=light] .pcw-theme-toggle:is(:hover,:focus-visible){box-shadow:0 0 0 1px rgba(47,111,214,.25),0 0 14px 2px rgba(47,111,214,.28)}
+html[data-theme=light] .pcw-theme-toggle .pcw-tt-star{color:#B8862B}
+@keyframes pcw-tt-spin{to{rotate:360deg}}
+@keyframes pcw-tt-pulse{0%,100%{scale:1}50%{scale:1.14}}
+@keyframes pcw-tt-tilt{0%,100%{rotate:-10deg}50%{rotate:12deg}}
+@keyframes pcw-tt-twinkle{0%,100%{opacity:0;scale:.4}50%{opacity:1;scale:1.1}}
+@media (prefers-reduced-motion:reduce){.pcw-theme-toggle:is(:hover,:focus-visible) :is(.pcw-tt-sun,.pcw-tt-moon,.pcw-tt-star){animation:none!important}.pcw-theme-toggle:is(:hover,:focus-visible) .pcw-tt-star{opacity:1}}
+
+/* ===== upload19 light-fix (Danny t335u): light mode = light page AND section backgrounds everywhere.
+   Root cause: upload18 widened the hero surface rules to :is(.pcw-*-dark,.pcw-*-light) (home-dark.css, inner-dark.css) so the zoom/3D
+   structure kept working in light mode, which also kept every hero (#050607 stage, white-line grid, dark scrims) plus the reviews,
+   awards, footer and some Kadence navy rows dark. These overrides re-skin only the colours; layout/motion rules stay shared.
+   Still dark on purpose (render panels, baked-dark art): .hybrid-net / .net-fallback (Business IT 3D panel), .pcw-diagram__frame. */
+html[data-theme=light] body.pcw-light .pcw-hero{background:#F3F6FB!important;color:#0B1F3A}
+html[data-theme=light] body.pcw-light .pcw-hero__bg{background:radial-gradient(680px 440px at 74% 46%,rgba(47,123,255,.13),transparent 70%),radial-gradient(460px 280px at 16% 86%,rgba(198,161,90,.12),transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F3F6FB 55%,#EAF0F8 100%)!important}
+html[data-theme=light] body.pcw-light .pcw-hero__bg::after{display:none!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-grid-bg{background-image:linear-gradient(rgba(11,31,58,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(11,31,58,.055) 1px,transparent 1px)!important}
+html[data-theme=light] body.pcw-light .pcw-circuit{opacity:.18!important;filter:none!important}
+html[data-theme=light] body.pcw-light .pcw-grain{display:none!important}
+html[data-theme=light] body.pcw-light .pcw-hero h1,html[data-theme=light] body.pcw-light .pcw-hero__next-title{color:#0B1F3A!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light .pcw-hero h1 .pcw-h1-sub{color:#8C6914!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light .pcw-hero h1 .pcw-h1-l,html[data-theme=light] body.pcw-light .pcw-hero h1 .pcw-h1-l *{color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light .pcw-hero :is(.pcw-lede,.pcw-hero__next,.pcw-hero__next p){color:#33465E!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-lede strong{color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-lede a{color:#1F5FCC!important}
+html[data-theme=light] body.pcw-light .pcw-hero :is(.pcw-crumbs,.pcw-crumbs a,.pcw-crumbs span){color:#55667B!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-eyebrow{color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-hero :is(a.pcw-call,a.pcw-tel){color:#0B1F3A!important;background:rgba(14,76,138,.07)!important;border-color:rgba(14,76,138,.30)!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light .pcw-hero :is(a.pcw-call,a.pcw-tel):is(:hover,:focus-visible){background:rgba(47,111,214,.13)!important;box-shadow:0 0 22px -8px rgba(47,111,214,.55)!important}
+html[data-theme=light] body.pcw-light .pcw-hero a.pcw-call .pcw-ico{color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-proof{border-color:rgba(11,31,58,.14)!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-proof li{color:#4A5B70!important;border-color:rgba(11,31,58,.14)!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-proof b{color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-contact-list :is(a,span,div,.pcw-hours__d,.pcw-hours__t,.pcw-hours__n){color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-contact-list__row > :first-child,html[data-theme=light] body.pcw-light .pcw-hero .pcw-contact-list .pcw-ico{color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-hero .pcw-contact-list a{text-decoration-color:rgba(140,105,20,.55)!important}
+/* home zoom hero: scrims become light veils instead of near-black */
+html[data-theme=light] body.pcw-light .pcw-hero__inner::before{background:linear-gradient(90deg,rgba(243,246,251,.9) 0%,rgba(243,246,251,.6) 34%,rgba(243,246,251,0) 56%)!important}
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoom .pcw-hero__next{background:none!important}
+@media (max-width:767px){
+ html[data-theme=light] body.pcw-light .pcw-hero__inner::before{background:linear-gradient(180deg,rgba(243,246,251,.2) 0%,rgba(243,246,251,.62) 30%,rgba(243,246,251,.86) 58%,rgba(243,246,251,0) 100%)!important}
+ html[data-theme=light] body.pcw-light .pcw-hero.is-zoom .pcw-hero__next{background:linear-gradient(0deg,rgba(243,246,251,.96) 0,rgba(243,246,251,.86) 30%,rgba(243,246,251,0) 52%)!important}
+ html[data-theme=light] body.pcw-light .pcw-hero__bg{background:radial-gradient(420px 300px at 50% 22%,rgba(47,123,255,.14),transparent 70%),linear-gradient(180deg,#FFFFFF,#EEF3FA)!important}
+}
+html[data-theme=light] body.pcw-light .pcw-callout__t{color:#0B1F3A!important;background:rgba(255,255,255,.94)!important;box-shadow:0 8px 24px -12px rgba(11,31,58,.4)!important;border-color:rgba(11,31,58,.12)!important}
+html[data-theme=light] body.pcw-light .pcw-callout__t b{color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-callout__t small{color:#4A5B70!important}
+/* bands that were navy in both themes */
+html[data-theme=light] body.pcw-light :is(.pcw-reviews,.pcw-awards-wrap){background:linear-gradient(180deg,#F1F5FB,#E7EEF8)!important;color:#0B1F3A!important;box-shadow:none!important}
+html[data-theme=light] body.pcw-light :is(.pcw-reviews,.pcw-awards-wrap) :is(h2,h3,p,li,span,small,b,strong,a,figcaption,div){color:inherit}
+html[data-theme=light] body.pcw-light :is(.pcw-reviews,.pcw-awards-wrap) :is(p,small,li){color:#33465E!important}
+html[data-theme=light] body.pcw-light :is(.pcw-reviews,.pcw-awards-wrap) :is(h2,h3,b,strong){color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light :is(.pcw-reviews,.pcw-awards-wrap) .pcw-eyebrow{color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-footer{background:linear-gradient(180deg,#EEF3FA,#E2E9F3 60%)!important;color:#33465E!important;border-top:1px solid #D5DEEA}
+html[data-theme=light] body.pcw-light .pcw-footer :is(p,li,span,small,address,div){color:#33465E!important}
+html[data-theme=light] body.pcw-light .pcw-footer :is(h3,h4,b,strong){color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light .pcw-footer h2{color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-footer .footer-grid>:is(.footer-visit,.footer-links){border-top-color:#D5DEEA}
+html[data-theme=light] body.pcw-light .pcw-footer a{color:#0E4C8A!important}
+html[data-theme=light] body.pcw-light .pcw-footer a:is(:hover,:focus-visible){color:#8C6914!important}
+html[data-theme=light] body.pcw-light .pcw-chip-sec{background:#EEF3FA!important;border-top:1px solid #D5DEEA;border-bottom:1px solid #D5DEEA}
+html[data-theme=light] body.pcw-light .pcw-chips li{background:#fff!important;border-color:#C9D3E0!important;color:#0B1F3A!important}
+html[data-theme=light] body.pcw-light .pcw-chips a{color:#0E4C8A!important}
+/* keep the navy Google review pill readable inside the now-light review band */
+html[data-theme=light] body.pcw-light .pcw-reviews a.rb,html[data-theme=light] body.pcw-light .pcw-reviews a.rb :is(span,b,strong,small){color:#fff!important}
+/* home hero render: the cut-out was made for black (dark halo baked in), so in light mode it sits on its own dark render panel
+   until Pixel's -light variants land (then .pcw-has-light-hero drops the panel, see the light hero swap below). Mobile keeps the soft veil. */
+@media (min-width:768px){
+ html[data-theme=light] body.pcw-home-light:not(.pcw-has-light-hero) .pcw-float--desktop-dark::before{content:"";position:absolute;inset:0;pointer-events:none;transform:translateZ(-2px);
+  background:radial-gradient(ellipse 31% 47% at 52% 57%,#07090C 0%,#07090C 70%,rgba(7,9,12,.75) 84%,rgba(7,9,12,0) 100%)}
+}
+html[data-theme=light] body.pcw-light .pcw-hero__inner::before{transition:opacity .35s}
+/* zoomed interior / Business IT network states: the copy sits over the dark render panel, so it keeps the dark scrim + white copy */
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__inner::before,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.72) 50%,rgba(5,6,7,0) 100%)!important}
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__next-title,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__next-title{color:#fff!important;text-shadow:0 2px 18px rgba(0,0,0,.85)!important}
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed :is(.pcw-hero__next,.pcw-hero__next p),html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) :is(.pcw-hero__next,.pcw-hero__next p){color:#D6E2F0!important;text-shadow:0 1px 10px rgba(0,0,0,.9)!important}
+@media (max-width:767px){
+ html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__inner::before,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(180deg,rgba(5,6,7,.30) 0%,rgba(5,6,7,.55) 30%,rgba(5,6,7,.78) 58%,rgba(5,6,7,0) 100%)!important}
+ html[data-theme=light] body.pcw-light .pcw-hero.is-zoom.is-zoomed .pcw-hero__next,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero.is-zoom:is(.is-network,.is-handoff) .pcw-hero__next{background:linear-gradient(0deg,rgba(5,6,7,.94) 0,rgba(5,6,7,.82) 30%,rgba(5,6,7,0) 52%)!important}
+}
+@media (min-width:768px){ html[data-theme=light] body.pcw-home-light:not(.pcw-has-light-hero) .pcw-float--desktop-dark .pcw-float__img{position:relative;z-index:1}
+ html[data-theme=light] body.pcw-home-light:not(.pcw-has-light-hero) .pcw-float--desktop-dark::before{z-index:0} }
+html[data-theme=light] body.pcw-light .pcw-hero__bg{transition:background-color .35s}
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff){background:#050607!important}
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-hero__bg,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__bg{background:radial-gradient(640px 420px at 72% 46%,rgba(47,123,255,.20),transparent 70%),linear-gradient(180deg,#050607,#0B0D0E)!important}
+html[data-theme=light] body.pcw-light .pcw-hero.is-zoomed .pcw-grid-bg,html[data-theme=light] body.pcw-light:not(.pcw-has-light-hub) .pcw-hero:is(.is-network,.is-handoff) .pcw-grid-bg{opacity:.4}
+
+/* light hero art delivered (pcw-has-light-hero / pcw-has-light-hub set by plugins/pcwerx-site/light-hero.php only when the -light file exists and loads) */
+html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.hybrid-net,.net-fallback){background:#EEF3FA!important}
+html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.hybrid-net,.net-fallback)::after{background:linear-gradient(90deg,rgba(238,243,250,.94) 0,rgba(238,243,250,.7) 36%,rgba(238,243,250,0) 68%)!important}
+html[data-theme=light] body.pcw-light.pcw-has-light-hub #gl{display:none!important} /* the WebGL scene is dark-only; the light still stands in */
+html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.pcw-hero__net-title,.net-fallback h2){color:#0B1F3A!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.pcw-hero__net p,.net-fallback p){color:#33465E!important;text-shadow:none!important}
+html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.pcw-hero__net,.net-fallback) .net-chips li{color:#0B1F3A!important;background:#fff!important;border-color:#C9D3E0!important}
+html[data-theme=light] body.pcw-light.pcw-has-light-hub .pcw-hero.is-zoom .pcw-hero__net{background:none!important}
+@media (max-width:767px){html[data-theme=light] body.pcw-light.pcw-has-light-hub .pcw-hero.is-zoom .pcw-hero__net{background:linear-gradient(0deg,rgba(238,243,250,.96) 0,rgba(238,243,250,.86) 36%,rgba(238,243,250,0) 62%)!important}
+ html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.hybrid-net,.net-fallback)::after{background:linear-gradient(180deg,rgba(238,243,250,0) 0,rgba(238,243,250,.9) 70%)!important}}
+html[data-theme=light] body.pcw-light .pcw-footer .pcw-eyebrow,html[data-theme=light] body.pcw-light .pcw-footer .pcw-eyebrow span{color:#1F5FCC!important}
+/* light hub still replaces the dark-only WebGL scene: keep the poster visible even after hub.js marks .gl-ready */
+html[data-theme=light] body.pcw-light.pcw-has-light-hub .hybrid-net .poster{opacity:1!important}
