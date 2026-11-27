@@ -2,7 +2,7 @@
    into the Option C network scene. No libraries. Skipped under prefers-reduced-motion. */
 (function(){
   var d=document,root=d.documentElement,w=window;
-  var hero=d.querySelector('.pcw-home-dark .pcw-hero'); if(!hero){root.classList.remove('pcw-reveal-pending');return;}
+  var hero=d.querySelector('.pcw-home-dark .pcw-hero,.pcw-home-light .pcw-hero'); if(!hero){root.classList.remove('pcw-reveal-pending');return;}
   if(w.matchMedia('(prefers-reduced-motion: reduce)').matches){root.classList.remove('pcw-reveal-pending');return;}
   /* 1) H1 word-by-word reveal. Text nodes stay in the h1 (same words, same order). */
   var h1=hero.querySelector('h1');

@@ -40,7 +40,7 @@
   var obj=hero.querySelector('.pcw-float'); if(!obj) return;
   if(d.body.classList.contains('pcw-bizit')||obj.classList.contains('pcw-float--pick-contact')) return; /* Business IT and the contact picture stay still and flat (Danny, Nov 25; contact t209u) */ /* Business IT: pictures stay still and flat (Danny, Nov 25) */
   var mode=hero.getAttribute('data-motion'), mobile=w.matchMedia('(max-width: 899px)').matches;
-  var dark=d.body.classList.contains('pcw-home-dark'), push=mode==='pushin'&&!mobile, lite=mode==='pushin'&&mobile&&dark, stage=hero.querySelector('.pcw-hero__stage');
+  var dark=d.body.classList.contains('pcw-home-dark')||d.body.classList.contains('pcw-home-light'), push=mode==='pushin'&&!mobile, lite=mode==='pushin'&&mobile&&dark, stage=hero.querySelector('.pcw-hero__stage');
   if(lite) hero.classList.add('is-lite');
   if(push){ hero.classList.add('is-pushin'); var hd=d.querySelector('.pcw-header'); if(hd) root.style.setProperty('--hdr',hd.offsetHeight+'px'); }
   var range=mode==='still'?10:(mobile?16:34), active=false, ticking=false;

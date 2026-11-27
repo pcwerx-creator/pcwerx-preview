@@ -639,33 +639,7 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
  .pcw-acc .pcw-nav>li>.sub-menu,.pcw-acc .pcw-sub-toggle span{transition:none}
  .pcw-acc .pcw-nav>li.is-sub-open>.sub-menu{height:auto}
 }
-/* upload15: Business IT header item = option A gold outline pill (Danny, mockups/bizit-button/css/option-a.css).
-   Text: #8C6914 on light pages (AA 5.07), #E2BC6A on dark headers (AA 11.2). On a business page: gold fill, navy #071D3A (AA 6.94).
-   Mobile: first row of the drawer, full-width gold outline around the row (chevron inside). Submenu links untouched. */
-.pcw-nav>#menu-item-874{--bz-text:#8C6914;--bz-gold:#C6A15A}
-.pcw-dark .pcw-nav>#menu-item-874,.pcw-home-dark .pcw-nav>#menu-item-874{--bz-text:#E2BC6A}
-.pcw-nav>#menu-item-874>a{border:1.5px solid var(--bz-gold);border-radius:999px;padding:8px 16px;margin:0 2px;background:transparent;color:var(--bz-text);box-sizing:border-box;transition:color .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}
-.pcw-nav>#menu-item-874>a:hover,.pcw-nav>#menu-item-874>a:focus-visible,.pcw-nav>#menu-item-874:hover>a{background:transparent;color:var(--bz-text);border-color:var(--bz-gold);box-shadow:0 0 0 1px rgba(198,161,90,.35),0 0 18px rgba(198,161,90,.55)}
-.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-dark .pcw-nav>#menu-item-874:hover>a,
-.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a{box-shadow:0 0 0 1px rgba(226,188,106,.28),0 0 20px rgba(198,161,90,.65)}
-.pcw-nav>#menu-item-874.current-menu-item>a,.pcw-nav>#menu-item-874.current-menu-ancestor>a,
-.pcw-nav>#menu-item-874.current-menu-item:hover>a,.pcw-nav>#menu-item-874.current-menu-ancestor:hover>a{background:linear-gradient(180deg,#D6B574,#C6A15A);border-color:var(--bz-gold);color:#071D3A;box-shadow:none}
-.pcw-nav>#menu-item-874.current-menu-item>a:hover,.pcw-nav>#menu-item-874.current-menu-ancestor>a:hover{background:#E0C17F;color:#071D3A;box-shadow:0 0 18px rgba(198,161,90,.55)}
-.pcw-nav>#menu-item-874>a::after{border-color:currentColor}
-@media (max-width:1023px){
- .pcw-nav>#menu-item-874{order:-1;display:flex;flex-wrap:wrap;align-items:center;margin:4px 0 10px;border:1.5px solid var(--bz-gold);border-radius:14px;box-sizing:border-box;overflow:hidden}
- .pcw-nav>#menu-item-874>a,.pcw-nav>#menu-item-874>a:hover,.pcw-nav>#menu-item-874:hover>a,.pcw-nav>#menu-item-874>a:focus-visible{flex:1 1 auto;margin:0;padding:12px 14px;border:0;border-radius:0;background:transparent;box-shadow:none;color:var(--bz-text);white-space:normal}
- .pcw-acc .pcw-nav>#menu-item-874>.pcw-sub-toggle{color:var(--bz-text);border-radius:0;background:transparent}
- /* open or tapped: soft gold tint across the whole row (link + chevron) */
- .pcw-acc .pcw-nav>#menu-item-874.is-sub-open>a,.pcw-acc .pcw-nav>#menu-item-874.is-sub-open>.pcw-sub-toggle,
- .pcw-acc .pcw-nav>#menu-item-874:has(>a:hover)>:is(a,.pcw-sub-toggle){background:rgba(198,161,90,.14);border-radius:0}
- /* on a business page: the row fills gold with navy text and chevron, like the desktop pill */
- .pcw-nav>#menu-item-874.current-menu-item>a,.pcw-nav>#menu-item-874.current-menu-ancestor>a,
- .pcw-acc .pcw-nav>#menu-item-874:is(.current-menu-item,.current-menu-ancestor)>:is(a,.pcw-sub-toggle){background:linear-gradient(180deg,#D6B574,#C6A15A);color:#071D3A;border-radius:0}
- .pcw-nav>#menu-item-874>.sub-menu{background:transparent}
- /* no desktop glow inside the mobile row (tap leaves :hover on touch screens) */
- .pcw-dark .pcw-nav>#menu-item-874>a,.pcw-home-dark .pcw-nav>#menu-item-874>a,.pcw-dark .pcw-nav>#menu-item-874:hover>a,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a,.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874>a:focus-visible,.pcw-home-dark .pcw-nav>#menu-item-874>a:focus-visible{box-shadow:none}
-}
+/* upload15 Business IT gold pill removed in upload18 (WWL-42); see the upload18 nav block below. */
 /* upload16: business pages' trust strip has 3 tiles (no 'Free diagnostics', Danny pt262u): 3 equal columns, stacked full-width rows on phones */
 .pcw-trust--3 ul{grid-template-columns:repeat(3,1fr)!important}
 .pcw-trust--3 li,.pcw-trust--3 li:nth-child(n){grid-column:auto!important;border-top:0!important;border-left:1px solid var(--line)}
@@ -683,3 +657,44 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
 .pcw-why li::before{position:static!important;flex:0 0 16px;transform:translateY(-3px) rotate(-45deg)!important}
 @media (max-width:1023px){.pcw-why{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media (max-width:600px){.pcw-why{grid-template-columns:1fr!important}.pcw-why li{min-height:56px}}
+/* upload18 (WWL-42, Danny t299u): header active state = gold underline on the current page's link (and its parent menu, e.g.
+   Business IT on business pages, Areas on area pages); desktop and the mobile drawer. Hover keeps its soft tint.
+   Business IT: the upload15 gold pill/ring is removed; it looks like the other links, bold, with a slow gold shimmer across the text. */
+.pcw-nav{--nav-ul:#C6A15A}
+.pcw-dark .pcw-nav,.pcw-home-dark .pcw-nav{--nav-ul:#E2BC6A}
+.pcw-nav .current-menu-item>a,.pcw-nav .current-menu-ancestor>a,.pcw-nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--nav-ul);text-decoration-thickness:2px;text-underline-offset:7px}
+.pcw-nav>li.current-menu-item>a:not(:hover),.pcw-nav>li.current-menu-ancestor>a:not(:hover),
+.pcw-dark .pcw-nav>li.current-menu-item>a:not(:hover),.pcw-dark .pcw-nav>li.current-menu-ancestor>a:not(:hover),
+.pcw-home-dark .pcw-nav>li.current-menu-item>a:not(:hover),.pcw-home-dark .pcw-nav>li.current-menu-ancestor>a:not(:hover){background:transparent}
+/* Business IT: same as the other links */
+.pcw-nav>#menu-item-874>a,.pcw-nav>#menu-item-874>a:hover,.pcw-nav>#menu-item-874>a:focus-visible,.pcw-nav>#menu-item-874:hover>a,
+.pcw-nav>#menu-item-874.current-menu-item>a,.pcw-nav>#menu-item-874.current-menu-ancestor>a,
+.pcw-nav>#menu-item-874.current-menu-item:hover>a,.pcw-nav>#menu-item-874.current-menu-ancestor:hover>a,
+.pcw-nav>#menu-item-874.current-menu-item>a:hover,.pcw-nav>#menu-item-874.current-menu-ancestor>a:hover,
+.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874:hover>a,.pcw-dark .pcw-nav>#menu-item-874>a:focus-visible,
+.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a,.pcw-home-dark .pcw-nav>#menu-item-874>a:focus-visible{border:0;border-radius:8px;margin:0;box-shadow:none;color:var(--ink);font-weight:800;background:transparent}
+.pcw-dark .pcw-nav>#menu-item-874>a,.pcw-home-dark .pcw-nav>#menu-item-874>a{color:#E8EEF6}
+.pcw-nav>#menu-item-874>a:hover,.pcw-nav>#menu-item-874:hover>a{background:var(--blue-soft)}
+.pcw-dark .pcw-nav>#menu-item-874>a:hover,.pcw-dark .pcw-nav>#menu-item-874:hover>a,.pcw-home-dark .pcw-nav>#menu-item-874>a:hover,.pcw-home-dark .pcw-nav>#menu-item-874:hover>a{background:rgba(47,123,255,.16)}
+.pcw-nav>#menu-item-874>a::after{border-color:currentColor}
+.pcw-shimmer{background:linear-gradient(100deg,currentColor 0%,currentColor 38%,#F2D48E 48%,#fff 50%,#F2D48E 52%,currentColor 62%,currentColor 100%);background-size:260% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:pcw-shimmer 5.5s ease-in-out infinite}
+@keyframes pcw-shimmer{0%,35%{background-position:100% 0}75%,100%{background-position:0 0}}
+@media (prefers-reduced-motion:reduce){.pcw-shimmer{animation:none;background:none;-webkit-text-fill-color:currentColor}}
+@media (max-width:1023px){
+ .pcw-nav>#menu-item-874{order:-1;display:flex;flex-wrap:wrap;align-items:center;border:0;border-radius:0;margin:0;overflow:visible}
+ .pcw-nav>#menu-item-874>a{flex:1 1 auto}
+ .pcw-dark .pcw-nav>#menu-item-874>a,.pcw-home-dark .pcw-nav>#menu-item-874>a{color:#E8EEF6}
+ .pcw-acc .pcw-nav>#menu-item-874>.pcw-sub-toggle,.pcw-acc .pcw-nav>#menu-item-874:is(.current-menu-item,.current-menu-ancestor)>.pcw-sub-toggle{color:inherit;background:transparent;border-radius:0 8px 8px 0}
+ .pcw-acc .pcw-nav>#menu-item-874:is(.current-menu-item,.current-menu-ancestor)>a{background:transparent}
+ .pcw-acc .pcw-nav>#menu-item-874.is-sub-open>:is(a,.pcw-sub-toggle),.pcw-acc .pcw-nav>#menu-item-874:has(>a:hover)>:is(a,.pcw-sub-toggle){background:rgba(47,123,255,.16)}
+ /* mobile: current parent rows show the underline instead of a filled tint (open/hover tint unchanged) */
+ .pcw-dark .pcw-acc .pcw-nav>li.menu-item-has-children:is(.current-menu-item,.current-menu-ancestor):not(.is-sub-open):not(:has(>a:hover)):not(:has(>.pcw-sub-toggle:hover))>:is(a,.pcw-sub-toggle),
+ .pcw-home-dark .pcw-acc .pcw-nav>li.menu-item-has-children:is(.current-menu-item,.current-menu-ancestor):not(.is-sub-open):not(:has(>a:hover)):not(:has(>.pcw-sub-toggle:hover))>:is(a,.pcw-sub-toggle),
+ .pcw-acc .pcw-nav>li.menu-item-has-children:is(.current-menu-item,.current-menu-ancestor):not(.is-sub-open):not(:has(>a:hover)):not(:has(>.pcw-sub-toggle:hover))>:is(a,.pcw-sub-toggle){background:transparent}
+}
+/* upload18 (t304u): footer link columns removed; brand block + Visit PC Werx only */
+.pcw-footer .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:48px 64px;align-items:start}
+.pcw-footer .footer-grid>div:last-child{min-width:260px}
+@media(max-width:767px){.pcw-footer{padding-top:44px}.pcw-footer .footer-grid{grid-template-columns:1fr;gap:28px}.pcw-footer .footer-grid>div:last-child{min-width:0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}}
+/* upload18 (t322u): CTA phone digits on their own line under the bold 905-5PC-WERX */
+.pcw-cta__phone small{display:block;margin-top:6px;line-height:1.2;white-space:nowrap;letter-spacing:.02em}

@@ -1,0 +1,25 @@
+/* upload18 (Danny t321u): light/dark toggle button + light-theme fixes. Dark is the default; light = body.pcw-light (dark classes swapped off before paint). */
+.pcw-theme-toggle{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;margin:0;border-radius:999px;cursor:pointer;
+ background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#F1D59A;transition:background .2s,border-color .2s,color .2s}
+.pcw-theme-toggle:hover{background:rgba(47,123,255,.18);border-color:rgba(120,170,255,.55);color:#fff}
+.pcw-theme-toggle:focus-visible{outline:2px solid #E2BC6A;outline-offset:3px}
+.pcw-theme-toggle svg{display:block}
+.pcw-theme-toggle .pcw-tt-moon{display:none}
+html[data-theme=light] .pcw-theme-toggle .pcw-tt-sun{display:none}
+html[data-theme=light] .pcw-theme-toggle .pcw-tt-moon{display:block}
+@media (prefers-reduced-motion:reduce){.pcw-theme-toggle{transition:none}}
+/* smooth colour change only when the user clicks (never on load), and never with reduced motion */
+@media (prefers-reduced-motion:no-preference){html.pcw-theme-anim body,html.pcw-theme-anim body *:not(canvas):not(video){transition:background-color .35s ease,color .35s ease,border-color .35s ease!important}}
+html[data-theme=light] .pcw-theme-toggle{background:#F1F4F9;border-color:#C9D3E0;color:#0B1F3A}
+html[data-theme=light] .pcw-theme-toggle:hover{background:#E3ECF8;border-color:#2F6FD6;color:#0B1F3A}
+html[data-theme=light] .pcw-theme-toggle:focus-visible{outline-color:#1F5FCC}
+/* light: home "What we do" band was a blue gradient meant for dark text-on-navy; make it a clean pale band */
+body.pcw-light .pcw-services.pcw-band{background:linear-gradient(180deg,#EEF3FA,#E7EEF8)!important;color:#111}
+body.pcw-light .pcw-services.pcw-band>.container>p:not(.pcw-eyebrow){color:#44505F}
+/* light: Business IT shimmer readable on white (dark ink with a blue/gold sweep) */
+body.pcw-light .pcw-shimmer{background:linear-gradient(100deg,#0B1F3A 0%,#0B1F3A 38%,#1F5FCC 47%,#8C6914 53%,#0B1F3A 62%,#0B1F3A 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (prefers-reduced-motion:reduce){body.pcw-light .pcw-shimmer{background:none;color:#0B1F3A}}
+/* light: gold that sits on white/pale cards is darkened to pass contrast; gold on the navy bands stays bright */
+body.pcw-light .pcw-cta .pcw-eyebrow,body.pcw-light .pcw-cta .pcw-eyebrow span{color:#8C6914}
+body.pcw-light .pcw-trust .pcw-trust__g span,body.pcw-light .pcw-trust__g>span{color:#9A6F0B}
+body.pcw-light .pcw-awards .pcw-eyebrow,body.pcw-light .pcw-awards-wrap .pcw-eyebrow{color:#E2BC6A}

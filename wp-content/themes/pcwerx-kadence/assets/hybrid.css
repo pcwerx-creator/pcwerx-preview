@@ -9,9 +9,9 @@ body.pcw-home-dark{
 }
 
 /* Extra pin travel after the zoom so the PC can shrink into the chip, then we hold on the network. */
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 210vh)}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 210vh)}
 @media (max-width:899px){
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 520px + 110vh)}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 520px + 110vh)}
 }
 
 /* Network scene lives in the sticky stage, under the PC, faded in during the handoff. */
@@ -29,26 +29,26 @@ body.pcw-home-dark{
 }
 
 /* Business IT copy: same pin stack as the "Expert repair" panel, faded in during the handoff. */
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net{
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net{
   display:flex;flex-direction:column;justify-content:center;position:sticky;top:var(--hdr,76px);z-index:2;
   height:var(--vh);min-height:540px;max-width:34rem;margin:0;opacity:0;transform:none;pointer-events:none;align-self:start;color:#D6E2F0
 }
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .pcw-eyebrow{margin-bottom:14px}
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net-title{font:800 clamp(2rem,1.2rem + 2.4vw,3.2rem)/1.08 var(--sans);letter-spacing:-.03em;color:#fff;margin:0 0 14px;
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net .pcw-eyebrow{margin-bottom:14px}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net-title{font:800 clamp(2rem,1.2rem + 2.4vw,3.2rem)/1.08 var(--sans);letter-spacing:-.03em;color:#fff;margin:0 0 14px;
   text-shadow:0 2px 18px rgba(0,0,0,.85),0 0 40px rgba(5,6,7,.8)}
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net p{margin:0 0 1em;text-shadow:0 1px 10px rgba(0,0,0,.9)}
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .net-chips{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:18px 0 0;padding:0}
-.pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .net-chips li{
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net p{margin:0 0 1em;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net .net-chips{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:18px 0 0;padding:0}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net .net-chips li{
   font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#E8EEF6;
   border:1px solid rgba(90,162,255,.38);background:rgba(5,7,10,.72);border-radius:999px;padding:7px 11px
 }
 @media (max-width:899px){
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net{
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net{
     justify-content:flex-end;max-width:none;min-height:0;margin:0 calc((100% - 100vw) / 2);
     padding:0 20px 28px;background:linear-gradient(0deg,rgba(5,6,7,.94) 0,rgba(5,6,7,.82) 36%,rgba(5,6,7,0) 62%)
   }
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net-title{font-size:2rem;margin-bottom:10px}
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net p:not(.pcw-hero__net-title){font-size:15px}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net-title{font-size:2rem;margin-bottom:10px}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net p:not(.pcw-hero__net-title){font-size:15px}
 }
 
 /* Handoff: JS writes opacity/transform only. Orbit and callouts fade with the PC. */
@@ -68,7 +68,7 @@ body.pcw-home-dark{
 }
 
 @media (prefers-reduced-motion:reduce){
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:0}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__inner{min-height:0}
 }
 
 .pcw-lede .nowrap,.lead .nowrap{white-space:nowrap}
@@ -91,25 +91,25 @@ body.pcw-home-dark{
    orbit: rasterised once, then scaled/faded on the compositor (its 90px shadows were re-rastered every frame);
    grain: plain alpha instead of mix-blend overlay (no full-screen blend pass); header: near-opaque, no backdrop blur over the moving hero;
    beam: own layer so the blur isn't redone; PC-side layers stop drawing once the network owns the screen. */
-.pcw-home-dark .pcw-orbit{will-change:transform,opacity}
-.pcw-home-dark .pcw-grain{mix-blend-mode:normal;opacity:.014}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-orbit{will-change:transform,opacity}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-grain{mix-blend-mode:normal;opacity:.014}
 .pcw-home-dark .pcw-header{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,6,7,.95)}
-.pcw-home-dark .pcw-beam{will-change:transform}
-.pcw-home-dark .pcw-hero.is-network .pcw-beam,.pcw-home-dark .pcw-hero.is-network .pcw-orbit,.pcw-home-dark .pcw-hero.is-network .pcw-grain{visibility:hidden}
-.pcw-home-dark .pcw-hero.is-network .pcw-grain{animation-play-state:paused}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-beam{will-change:transform}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-network .pcw-beam,:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-network .pcw-orbit,:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-network .pcw-grain{visibility:hidden}
+:is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-network .pcw-grain{animation-play-state:paused}
 
 /* Danny t210u (Nov 25 1:01 PM): mobile "From one PC to your whole office" in about one swipe on a 390x844 phone.
    The network art becomes a 42vh band at the top of the pinned stage, the copy starts right under it, padding trimmed,
    and the network hold after the handoff is shorter (hybrid-hero.js keeps the zoom/handoff the same length in px). Desktop unchanged. */
 @media (max-width:899px){
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 520px + 80vh)}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 520px + 80vh)}
   .hybrid-net{bottom:auto;height:42vh}
   .hybrid-net .poster img{object-position:50% 24%}
   .hybrid-net::after{background:linear-gradient(180deg,#090b0e00 0,#090b0e00 64%,#090b0e 100%)}
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net{justify-content:flex-start;padding:calc(42vh - 22px) 20px 16px;
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net{justify-content:flex-start;padding:calc(42vh - 22px) 20px 16px;
     background:linear-gradient(180deg,rgba(9,11,14,0) 0,rgba(9,11,14,0) calc(42vh - 30px),#090b0e calc(42vh + 10px))}
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .pcw-eyebrow{margin-bottom:10px}
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__net .net-chips{margin-top:12px}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net .pcw-eyebrow{margin-bottom:10px}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__net .net-chips{margin-top:12px}
   /* reduced-motion still band: same shape */
   .net-fallback,.net-fallback .container{min-height:0}
   .net-fallback .pcw-netbg{position:relative;height:42vh}
@@ -121,5 +121,5 @@ body.pcw-home-dark{
    (pin range 520px + 80vh -> 260px + 40vh, i.e. 1195px -> 598px on a 390x844 phone). hybrid-hero.js keeps every stage's share of the pin,
    so the copy, zoom + callouts, "Expert repair" panel, handoff and network all still show, each in half the scroll. Tablets/desktop unchanged. */
 @media (max-width:767px){
-  .pcw-home-dark .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 260px + 40vh)}
+  :is(.pcw-home-dark,.pcw-home-light) .pcw-hero.is-zoom .pcw-hero__inner{min-height:calc(var(--vh) + 260px + 40vh)}
 }
