@@ -133,3 +133,9 @@ html[data-theme=light] body.pcw-light.pcw-has-light-hub .pcw-hero.is-zoom .pcw-h
 html[data-theme=light] body.pcw-light .pcw-footer .pcw-eyebrow,html[data-theme=light] body.pcw-light .pcw-footer .pcw-eyebrow span{color:#1F5FCC!important}
 /* light hub still replaces the dark-only WebGL scene: keep the poster visible even after hub.js marks .gl-ready */
 html[data-theme=light] body.pcw-light.pcw-has-light-hub .hybrid-net .poster{opacity:1!important}
+/* upload20: hub-390-light delivered. Mobile .hybrid-net is a ~354px band above the copy; only fade its bottom 30% so the art stays crisp */
+@media (max-width:767px){
+ html[data-theme=light] body.pcw-light.pcw-has-light-hub .pcw-hero:is(.is-network,.is-handoff) .pcw-hero__inner::before{background:linear-gradient(180deg,rgba(243,246,251,0) 0,rgba(243,246,251,0) 40%,rgba(243,246,251,.72) 54%,rgba(243,246,251,.9) 70%,rgba(243,246,251,0) 100%)!important}
+ html[data-theme=light] body.pcw-light.pcw-has-light-hub :is(.hybrid-net,.net-fallback)::after{background:linear-gradient(180deg,rgba(238,243,250,0) 0,rgba(238,243,250,0) 70%,rgba(238,243,250,.92) 100%)!important}
+ html[data-theme=light] body.pcw-light.pcw-has-light-hub .pcw-hero.is-zoom .pcw-hero__net{background:linear-gradient(0deg,rgba(238,243,250,.92) 0,rgba(238,243,250,.75) 34%,rgba(238,243,250,0) 54%)!important}
+ html[data-theme=light] body.pcw-light.pcw-has-light-hub .hybrid-net .poster img{object-position:50% 36%!important} /* hub-390-light focal point sits lower than the dark hub-390; crop only, art untouched */}
