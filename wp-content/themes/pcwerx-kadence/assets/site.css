@@ -769,3 +769,20 @@ body.page-id-54 .pcw-cards-row+.pcw-cards-row .kt-row-column-wrap{padding-top:10
 @media (max-width:767px){body:not(.home) .pcw-hero .pcw-hero__inner{padding-top:36px!important}}
 /* upload25 (Danny t373u/t374u/t375u): hide the visible breadcrumb trail above the hero eyebrow/H1 at every width, both themes. CSS only: the markup, its links and the Yoast BreadcrumbList JSON-LD stay exactly as they are, so nothing changes for crawlers. display:none also drops the trail's own margin, so no empty space is left above the eyebrow */
 .pcw-hero .pcw-crumbs{display:none!important}
+/* upload26 (Danny t377u/t380u): About 'Talk to your local IT team' box. All 3 buttons share the phone button's box: one equal-width cell each (cell = widest button, which is the phone), 46px tall, fully rounded. One row at >=768px, one left-aligned column below. Colours, icons, stars and animations kept; the Google button's logo/stars/label are scaled down to fit 46px */
+.pcw-band .pcw-band__actions{display:grid!important;grid-template-columns:max-content;justify-content:start;justify-items:stretch;align-items:center;gap:12px}
+@media (min-width:768px){.pcw-band .pcw-band__actions{grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none}}
+.pcw-band .pcw-band__actions>*{margin:0!important;min-width:0;display:flex}
+.pcw-band .pcw-band__actions :is(a.pcw-call,a.pcw-btn,a.rb){box-sizing:border-box;width:100%!important;height:46px!important;min-height:0!important;border-radius:999px!important;justify-content:center;align-items:center}
+.pcw-band .pcw-band__actions a.pcw-btn{padding:0 20px!important}
+.pcw-band .pcw-band__actions a.rb{gap:7px!important;padding:0 14px 0 6px!important}
+.pcw-band .pcw-band__actions a.rb::before{border-radius:999px 999px 0 0!important}
+.pcw-band .pcw-band__actions .rb .rb-gwrap{width:32px!important;height:32px!important;flex:0 0 32px}
+.pcw-band .pcw-band__actions .rb .rb-g{width:18px!important;height:18px!important}
+.pcw-band .pcw-band__actions .rb .rb-txt{gap:2px!important}
+.pcw-band .pcw-band__actions .rb .rb-stars{width:60px!important;height:11.6px!important}
+.pcw-band .pcw-band__actions .rb .rb-label{font-size:12.2px!important;line-height:1.1!important}
+/* upload26: Residential 768-1023px sideways scroll. The 'Review us on Google' button inside a two-column content row was wider than its column (258px in 227px); it now never exceeds its column and its label may wrap */
+.kt-inside-inner-col>.pcw-review-btn{max-width:100%}
+.kt-inside-inner-col>.pcw-review-btn .rb{max-width:100%}
+.kt-inside-inner-col>.pcw-review-btn .rb .rb-label{white-space:normal}
