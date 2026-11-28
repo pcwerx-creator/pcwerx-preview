@@ -809,3 +809,14 @@ body.page-id-51 .pcw-trust--2+.pcw-sec{padding-top:20px!important}
 .pcw-trust--1 li,.pcw-trust--1 li:nth-child(n){grid-column:auto!important;border:0!important;text-align:center}
 .pcw-trust--1 .pcw-trust__g a{display:flex;flex-direction:column;align-items:center}
 @media (max-width:767px){.pcw-trust--1 ul.container{width:auto;margin-left:16px!important;margin-right:16px!important}}
+
+/* upload31: mobile chat bubble was covering the footer Privacy policy link and the preview line. Leave room under the fixed #pcw-chat-launch on phones. */
+@media (max-width:600px){
+  .pcw-footer .footer-bottom{padding-bottom:80px}
+}
+/* upload31: service cards in a row were different heights (Kadence grid rows size to each card's content). Stretch the inner card to the column so a row is even. Stacked mobile cards stay content-height. */
+@media (min-width:768px){
+  .pcw-cards-row .kt-row-column-wrap,.pcw-sec--cards .kt-row-column-wrap{align-items:stretch}
+  .pcw-cards-row .wp-block-kadence-column,.pcw-sec--cards .wp-block-kadence-column{display:flex;flex-direction:column;height:100%}
+  .pcw-cards-row .wp-block-kadence-column>.kt-inside-inner-col,.pcw-sec--cards .pcw-inner .wp-block-kadence-column>.kt-inside-inner-col,.pcw-sec--cards .wp-block-kadence-column>.kt-inside-inner-col{flex:1 1 auto;width:100%;box-sizing:border-box}
+}
