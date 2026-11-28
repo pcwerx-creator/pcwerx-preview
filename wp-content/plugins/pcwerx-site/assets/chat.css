@@ -27,6 +27,7 @@
 .pcw-lead2 textarea{height:70px}.pcw-lead2 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .pcw-lead2 button{margin-top:10px;width:100%;background:#0E4C8A;color:#fff;border:0;border-radius:10px;padding:11px;font-weight:700;cursor:pointer;font-family:inherit}
 .pcw-lead2 .err{color:#b00020;font-size:13px;margin-top:6px}
+.pcw-lead2 .pcw-lead-ts{margin:10px 0 4px;min-height:65px}
 .pcw-typing{display:inline-flex;gap:4px}.pcw-typing i{width:6px;height:6px;border-radius:50%;background:#8aa2bd;animation:pcwt 1s infinite}.pcw-typing i:nth-child(2){animation-delay:.15s}.pcw-typing i:nth-child(3){animation-delay:.3s}
 @keyframes pcwt{50%{opacity:.3;transform:translateY(-2px)}}
 .pcw-chat.is-open~.pcw-chat-launch,.pcw-chat-launch[aria-expanded=true]{display:none}
