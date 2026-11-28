@@ -25,10 +25,20 @@ fbq('init','779694245163307');
 fbq('track','PageView');
 /* 3. OpenAI pixel DFv4a3PtPXWQEpgNFpjGMh (same snippet as the old site, debug OFF) */
 !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f);}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"DFv4a3PtPXWQEpgNFpjGMh",debug:false});
-/* 6a. Microsoft Advertising UET tag 199016717 (standard base code, page-load event only, no custom goals) */
+/* 6a. Microsoft Advertising UET tag 199016717 (standard base code, pageLoad plus phone_click on the shop number) */
 (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"199016717"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","https://bat.bing.com/bat.js","uetq");
 /* 6b. Microsoft Clarity project zkgqn0nou1 (standard snippet) */
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zkgqn0nou1");
+/* 6c. Microsoft Advertising: phone click conversion for 905-572-9379. Delegated, no preventDefault / stopPropagation, so Google call-swap and tel: navigation still run. */
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest&&e.target.closest('a');
+  if(!a)return;
+  var href=(a.getAttribute('href')||'');
+  if(!/^tel:/i.test(href))return;
+  var n=href.toLowerCase().replace(/[\s().-]/g,'');
+  if(!/^tel:(?:\+?1)?(?:9055729379|9055pcwerx)$/.test(n))return;
+  window.uetq = window.uetq || []; window.uetq.push('event', 'phone_click', {'event_category': 'contact', 'event_label': 'tel_9055729379'});
+},false);
 /* Leadsy is NOT installed (Danny's decision). */
 })();</script>
 <link rel="preload" as="image" href="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/pix2-voip-800.webp?v=1795658355" imagesrcset="/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/pix2-voip-480.webp?v=1795658353 480w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/pix2-voip-800.webp?v=1795658355 800w, /pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/images/pix2-voip-1200.webp?v=1795658358 1200w" imagesizes="(max-width: 767px) 78vw, 520px" fetchpriority="high">
@@ -215,7 +225,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 .site-bottom-footer-inner-wrap{padding-top:30px;padding-bottom:30px;grid-column-gap:30px;}.site-bottom-footer-inner-wrap .widget{margin-bottom:30px;}.site-bottom-footer-inner-wrap .site-footer-section:not(:last-child):after{right:calc(-30px / 2);}
 /*# sourceURL=kadence-global-inline-css */
 </style>
-<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795827257' media='all' />
+<link rel='stylesheet' id='pcw-newsite-css' href='/pcwerx-preview/wp-content/themes/pcwerx-kadence/assets/site.css?ver=1795828667' media='all' />
 <link rel='stylesheet' id='kadence-content-css' href='/pcwerx-preview/wp-content/themes/kadence/assets/css/content.min.css?ver=1795542162' media='all' />
 <style id="pcw-inner-dark-inline-css">
 /* PC Werx inner pages, dark (mix home style). Danny, Nov 24 2026 ~9:45 PM ("Ok let's see it").
