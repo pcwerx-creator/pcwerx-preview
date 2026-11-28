@@ -640,7 +640,7 @@ a:hover .pcw-morph__b,a:focus-visible .pcw-morph__b{transform:none;opacity:1}
  .pcw-acc .pcw-nav>li.is-sub-open>.sub-menu{height:auto}
 }
 /* upload15 Business IT gold pill removed in upload18 (WWL-42); see the upload18 nav block below. */
-/* upload16: business pages' trust strip has 3 tiles (no 'Free diagnostics', Danny pt262u): 3 equal columns, stacked full-width rows on phones */
+/* upload16: business pages' trust strip has 3 tiles (no diagnostics/quote promise box, Danny pt262u): 3 equal columns, stacked full-width rows on phones */
 .pcw-trust--3 ul{grid-template-columns:repeat(3,1fr)!important}
 .pcw-trust--3 li,.pcw-trust--3 li:nth-child(n){grid-column:auto!important;border-top:0!important;border-left:1px solid var(--line)}
 .pcw-trust--3 li:first-child{border-left:0!important}
