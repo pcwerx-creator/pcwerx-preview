@@ -820,3 +820,12 @@ body.page-id-51 .pcw-trust--2+.pcw-sec{padding-top:20px!important}
   .pcw-cards-row .wp-block-kadence-column,.pcw-sec--cards .wp-block-kadence-column{display:flex;flex-direction:column;height:100%}
   .pcw-cards-row .wp-block-kadence-column>.kt-inside-inner-col,.pcw-sec--cards .pcw-inner .wp-block-kadence-column>.kt-inside-inner-col,.pcw-sec--cards .wp-block-kadence-column>.kt-inside-inner-col{flex:1 1 auto;width:100%;box-sizing:border-box}
 }
+
+/* upload32: compact two-column service list inside cards (laptop card items) so a longer list stays even with neighbouring cards */
+.pcw-cards-row .pcw-card-list{display:grid;grid-template-columns:1fr;gap:4px 16px;margin:10px 0 0;padding:0;list-style:none}
+.pcw-cards-row .pcw-card-list li{position:relative;margin:0;padding-left:0.95em;font-size:14.5px;line-height:1.35}
+.pcw-cards-row .pcw-card-list li::before{content:"•";position:absolute;left:0;top:0}
+/* 2-col only where cards are 2-up (tablet). On a 4-card desktop row the columns are too narrow and items wrap badly. */
+@media (min-width:768px) and (max-width:1024px){
+  .pcw-cards-row .pcw-card-list{grid-template-columns:1fr 1fr;align-items:start}
+}
